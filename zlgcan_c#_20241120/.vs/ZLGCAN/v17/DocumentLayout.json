@@ -1,0 +1,125 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\IPC209\\Desktop\\\u8D44\u6599\\CAN\u8D44\u6599\\ZLGCAN\u8D44\u6599\\zlgcan_c#_20241120_\u65B0\u589E\u83B7\u53D6\u8BBE\u5907\u4FE1\u606F\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B3CEA71F-BADE-4957-B784-C2C9C1B4B1D9}|ZLGCAN\\ZLGCAN.csproj|C:\\Users\\IPC209\\Desktop\\\u8D44\u6599\\CAN\u8D44\u6599\\ZLGCAN\u8D44\u6599\\zlgcan_c#_20241120_\u65B0\u589E\u83B7\u53D6\u8BBE\u5907\u4FE1\u606F\\zlgcan\\canform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3CEA71F-BADE-4957-B784-C2C9C1B4B1D9}|ZLGCAN\\ZLGCAN.csproj|solutionrelative:zlgcan\\canform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3CEA71F-BADE-4957-B784-C2C9C1B4B1D9}|ZLGCAN\\ZLGCAN.csproj|c:\\users\\ipc209\\desktop\\\u8D44\u6599\\can\u8D44\u6599\\zlgcan\u8D44\u6599\\zlgcan_c#_20241120_\u65B0\u589E\u83B7\u53D6\u8BBE\u5907\u4FE1\u606F\\zlgcan\\recvdatathread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3CEA71F-BADE-4957-B784-C2C9C1B4B1D9}|ZLGCAN\\ZLGCAN.csproj|solutionrelative:zlgcan\\recvdatathread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3CEA71F-BADE-4957-B784-C2C9C1B4B1D9}|ZLGCAN\\ZLGCAN.csproj|C:\\Users\\IPC209\\Desktop\\\u8D44\u6599\\CAN\u8D44\u6599\\ZLGCAN\u8D44\u6599\\zlgcan_c#_20241120_\u65B0\u589E\u83B7\u53D6\u8BBE\u5907\u4FE1\u606F\\zlgcan\\canform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B3CEA71F-BADE-4957-B784-C2C9C1B4B1D9}|ZLGCAN\\ZLGCAN.csproj|solutionrelative:zlgcan\\canform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3CEA71F-BADE-4957-B784-C2C9C1B4B1D9}|ZLGCAN\\ZLGCAN.csproj|C:\\Users\\IPC209\\Desktop\\\u8D44\u6599\\CAN\u8D44\u6599\\ZLGCAN\u8D44\u6599\\zlgcan_c#_20241120_\u65B0\u589E\u83B7\u53D6\u8BBE\u5907\u4FE1\u606F\\zlgcan\\zlgcan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3CEA71F-BADE-4957-B784-C2C9C1B4B1D9}|ZLGCAN\\ZLGCAN.csproj|solutionrelative:zlgcan\\zlgcan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 291,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{5a4e9529-b6a0-46b5-be4f-0f0b239bc0eb}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CANForm.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "C:\\Users\\IPC209\\Desktop\\\u8D44\u6599\\CAN\u8D44\u6599\\ZLGCAN\u8D44\u6599\\zlgcan_c#_20241120_\u65B0\u589E\u83B7\u53D6\u8BBE\u5907\u4FE1\u606F\\ZLGCAN\\CANForm.cs",
+              "RelativeDocumentMoniker": "ZLGCAN\\CANForm.cs",
+              "ToolTip": "C:\\Users\\IPC209\\Desktop\\\u8D44\u6599\\CAN\u8D44\u6599\\ZLGCAN\u8D44\u6599\\zlgcan_c#_20241120_\u65B0\u589E\u83B7\u53D6\u8BBE\u5907\u4FE1\u606F\\ZLGCAN\\CANForm.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "ZLGCAN\\CANForm.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T07:57:19.778Z",
+              "EditorCaption": " [\u8BBE\u8BA1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "recvdatathread.cs",
+              "DocumentMoniker": "C:\\Users\\IPC209\\Desktop\\\u8D44\u6599\\CAN\u8D44\u6599\\ZLGCAN\u8D44\u6599\\zlgcan_c#_20241120_\u65B0\u589E\u83B7\u53D6\u8BBE\u5907\u4FE1\u606F\\ZLGCAN\\recvdatathread.cs",
+              "RelativeDocumentMoniker": "ZLGCAN\\recvdatathread.cs",
+              "ToolTip": "C:\\Users\\IPC209\\Desktop\\\u8D44\u6599\\CAN\u8D44\u6599\\ZLGCAN\u8D44\u6599\\zlgcan_c#_20241120_\u65B0\u589E\u83B7\u53D6\u8BBE\u5907\u4FE1\u606F\\ZLGCAN\\recvdatathread.cs",
+              "RelativeToolTip": "ZLGCAN\\recvdatathread.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAIwE8AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T02:11:52.455Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CANForm.cs",
+              "DocumentMoniker": "C:\\Users\\IPC209\\Desktop\\\u8D44\u6599\\CAN\u8D44\u6599\\ZLGCAN\u8D44\u6599\\zlgcan_c#_20241120_\u65B0\u589E\u83B7\u53D6\u8BBE\u5907\u4FE1\u606F\\ZLGCAN\\CANForm.cs",
+              "RelativeDocumentMoniker": "ZLGCAN\\CANForm.cs",
+              "ToolTip": "C:\\Users\\IPC209\\Desktop\\\u8D44\u6599\\CAN\u8D44\u6599\\ZLGCAN\u8D44\u6599\\zlgcan_c#_20241120_\u65B0\u589E\u83B7\u53D6\u8BBE\u5907\u4FE1\u606F\\ZLGCAN\\CANForm.cs",
+              "RelativeToolTip": "ZLGCAN\\CANForm.cs",
+              "ViewState": "AgIAAO4AAAAAAAAAAAAvwP0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T01:53:43.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "zlgcan.cs",
+              "DocumentMoniker": "C:\\Users\\IPC209\\Desktop\\\u8D44\u6599\\CAN\u8D44\u6599\\ZLGCAN\u8D44\u6599\\zlgcan_c#_20241120_\u65B0\u589E\u83B7\u53D6\u8BBE\u5907\u4FE1\u606F\\ZLGCAN\\zlgcan.cs",
+              "RelativeDocumentMoniker": "ZLGCAN\\zlgcan.cs",
+              "ToolTip": "C:\\Users\\IPC209\\Desktop\\\u8D44\u6599\\CAN\u8D44\u6599\\ZLGCAN\u8D44\u6599\\zlgcan_c#_20241120_\u65B0\u589E\u83B7\u53D6\u8BBE\u5907\u4FE1\u606F\\ZLGCAN\\zlgcan.cs",
+              "RelativeToolTip": "ZLGCAN\\zlgcan.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAwCwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T01:53:51.459Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 134,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1a46fd64-28d5-0019-8eb3-17a02d419b53}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

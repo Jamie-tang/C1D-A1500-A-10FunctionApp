@@ -1,0 +1,164 @@
+[2023-02-16 13:20:07.625] ================= Logging V1.0.11.30103 =================
+[2023-02-16 13:20:07.625] Connect server cans.zlgcloud.com:443, cans.zlgcloud.com:443, https
+[2023-02-16 13:20:07.625] 123 login...
+[2023-02-16 13:20:07.906] login_on_body: {"timestamp":"2023-02-16T05:20:06.940+00:00","status":400,"path":"/v2/control/sessions/tenant-manager","code":"iot-control.10013","error":"Bad Request","message":"UC authentication ...
+[2023-02-17 13:10:00.375] ================= Logging V1.0.11.30103 =================
+[2023-02-17 13:10:00.375] Connect server cans.zlgcloud.com:443, cans.zlgcloud.com:443, https
+[2023-02-17 13:10:00.375] LeoLiu login...
+[2023-02-17 13:10:00.546] login_on_body: {"result":true,"message":"OK","data":{"username":"LeoLiu"},"jwt":"ad5e12fff0b1429daf888dc1b90dbd5b"}
+[2023-02-17 13:10:00.546] login token: ad5e12fff0b1429daf888dc1b90dbd5b
+[2023-02-17 13:10:00.546] login success.
+[2023-02-17 13:10:00.546] Query devices ...
+[2023-02-17 13:10:00.671] query_devices_on_body: {"result":true,"message":"OK","data":[{"FlashOk":0,"devid":"B66B01FF1439324A3250","owner":"LeoLiu","UploadStat":0,"SDStat":2,"FwVer":"V1.01.02","CANInfo":{"CAN3":{"IsUpload"...
+[2023-02-17 13:10:00.671] Device0: L2_C2 can-common CANFDDTU-400EWGR B66B01FF1439324A3250 online.
+[2023-02-17 13:10:00.671] Device1: L2_B1 can-common CANFDDTU-400EWGR AC6B01FF221A374C3250 online.
+[2023-02-17 13:10:00.671] Device2: L2_C3 can-common CANFDDTU-400EWGR B86B01FF0D42324A3250 offline.
+[2023-02-17 13:10:00.671] Device3: RedCar can-common CANFDDTU-400EWGR E76B01FF4631374C3250 offline.
+[2023-02-17 13:10:00.828] mqtt connecting...
+[2023-02-17 13:10:00.031] mqtt connect success.
+[2023-02-17 13:10:02.000] subscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/online
+[2023-02-17 13:10:02.015] subscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/offline
+[2023-02-17 13:10:02.031] subscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/status
+[2023-02-17 13:10:02.031] subscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/data
+[2023-02-17 13:10:02.046] subscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/raw
+[2023-02-17 13:10:02.062] subscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/warning
+[2023-02-17 13:10:02.078] subscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/error
+[2023-02-17 13:10:04.921] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/status, dataLen=72
+[2023-02-17 13:10:04.031] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/raw, dataLen=54
+[2023-02-17 13:10:04.031] [Device0] deal with 1 of 1 gps fmt2 frames
+[2023-02-17 13:10:05.906] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/status, dataLen=72
+[2023-02-17 13:10:05.968] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/raw, dataLen=54
+[2023-02-17 13:10:05.968] [Device0] deal with 1 of 1 gps fmt2 frames
+[2023-02-17 13:10:06.921] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/status, dataLen=72
+[2023-02-17 13:10:06.000] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/raw, dataLen=54
+[2023-02-17 13:10:06.000] [Device0] deal with 1 of 1 gps fmt2 frames
+[2023-02-17 13:10:07.921] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/status, dataLen=72
+[2023-02-17 13:10:07.000] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/raw, dataLen=54
+[2023-02-17 13:10:07.000] [Device0] deal with 1 of 1 gps fmt2 frames
+[2023-02-17 13:10:08.281] unsubscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/online
+[2023-02-17 13:10:08.296] unsubscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/offline
+[2023-02-17 13:10:08.296] unsubscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/status
+[2023-02-17 13:10:08.312] unsubscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/data
+[2023-02-17 13:10:08.328] unsubscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/raw
+[2023-02-17 13:10:08.343] unsubscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/warning
+[2023-02-17 13:10:08.359] unsubscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/error
+[2023-02-17 13:10:23.062] Disconnect server ...
+[2023-02-17 13:10:23.078] mqtt loop exit.
+[2023-02-17 13:10:23.078] mqtt disconnecting...
+[2023-02-17 13:10:23.078] mqtt disconnected.
+[2023-02-17 13:10:23.078] LeoLiu logout...
+[2023-02-17 13:10:24.140] logout_on_body: {"timestamp":"2023-02-17T05:10:23.933+00:00","path":"/v1/auth/logout","status":404,"error":"Not Found","message":null,"requestId":"149cb807-978691"}
+[2023-02-17 13:10:24.140] Connect server cans.zlgcloud.com:443, cans.zlgcloud.com:443, https
+[2023-02-17 13:10:24.140] LeoLiu login...
+[2023-02-17 13:10:24.250] login_on_body: {"result":true,"message":"OK","data":{"username":"LeoLiu"},"jwt":"403a3554fb4f475ba983d4e79ff56b3e"}
+[2023-02-17 13:10:24.250] login token: 403a3554fb4f475ba983d4e79ff56b3e
+[2023-02-17 13:10:24.250] login success.
+[2023-02-17 13:10:24.250] Query devices ...
+[2023-02-17 13:10:24.343] query_devices_on_body: {"result":true,"message":"OK","data":[{"FlashOk":0,"devid":"B66B01FF1439324A3250","owner":"LeoLiu","UploadStat":0,"SDStat":2,"FwVer":"V1.01.02","CANInfo":{"CAN3":{"IsUpload"...
+[2023-02-17 13:10:24.343] Device0: L2_C2 can-common CANFDDTU-400EWGR B66B01FF1439324A3250 online.
+[2023-02-17 13:10:24.343] Device1: L2_B1 can-common CANFDDTU-400EWGR AC6B01FF221A374C3250 online.
+[2023-02-17 13:10:24.343] Device2: L2_C3 can-common CANFDDTU-400EWGR B86B01FF0D42324A3250 offline.
+[2023-02-17 13:10:24.343] Device3: RedCar can-common CANFDDTU-400EWGR E76B01FF4631374C3250 offline.
+[2023-02-17 13:10:24.453] mqtt connecting...
+[2023-02-17 13:10:24.593] mqtt connect success.
+[2023-02-17 13:10:42.890] Disconnect server ...
+[2023-02-17 13:10:42.906] mqtt loop exit.
+[2023-02-17 13:10:42.906] mqtt disconnecting...
+[2023-02-17 13:10:42.906] mqtt disconnected.
+[2023-02-17 13:10:42.906] LeoLiu logout...
+[2023-02-17 13:10:42.984] logout_on_body: {"timestamp":"2023-02-17T05:10:42.769+00:00","path":"/v1/auth/logout","status":404,"error":"Not Found","message":null,"requestId":"9af95b4b-978710"}
+[2023-02-17 13:10:43.000] Connect server cans.zlgcloud.com:443, cans.zlgcloud.com:443, https
+[2023-02-17 13:10:43.000] LeoLiu login...
+[2023-02-17 13:10:43.109] login_on_body: {"result":true,"message":"OK","data":{"username":"LeoLiu"},"jwt":"a8005ab2181a4841b7da0f20cbf3c4a3"}
+[2023-02-17 13:10:43.109] login token: a8005ab2181a4841b7da0f20cbf3c4a3
+[2023-02-17 13:10:43.109] login success.
+[2023-02-17 13:10:43.109] Query devices ...
+[2023-02-17 13:10:44.171] query_devices_on_body: {"result":true,"message":"OK","data":[{"FlashOk":0,"devid":"B66B01FF1439324A3250","owner":"LeoLiu","UploadStat":0,"SDStat":2,"FwVer":"V1.01.02","CANInfo":{"CAN3":{"IsUpload"...
+[2023-02-17 13:10:44.171] Device0: L2_C2 can-common CANFDDTU-400EWGR B66B01FF1439324A3250 online.
+[2023-02-17 13:10:44.171] Device1: L2_B1 can-common CANFDDTU-400EWGR AC6B01FF221A374C3250 online.
+[2023-02-17 13:10:44.171] Device2: L2_C3 can-common CANFDDTU-400EWGR B86B01FF0D42324A3250 offline.
+[2023-02-17 13:10:44.171] Device3: RedCar can-common CANFDDTU-400EWGR E76B01FF4631374C3250 offline.
+[2023-02-17 13:10:44.281] mqtt connecting...
+[2023-02-17 13:10:44.359] mqtt connect success.
+[2023-02-17 13:10:47.031] subscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/online
+[2023-02-17 13:10:47.046] subscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/offline
+[2023-02-17 13:10:47.062] subscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/status
+[2023-02-17 13:10:47.078] subscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/data
+[2023-02-17 13:10:47.078] subscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/raw
+[2023-02-17 13:10:47.093] subscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/warning
+[2023-02-17 13:10:47.109] subscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/error
+[2023-02-17 13:10:48.890] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/status, dataLen=72
+[2023-02-17 13:10:48.968] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/raw, dataLen=54
+[2023-02-17 13:10:48.968] [Device0] deal with 1 of 1 gps fmt2 frames
+[2023-02-17 13:10:49.890] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/status, dataLen=72
+[2023-02-17 13:10:49.968] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/raw, dataLen=54
+[2023-02-17 13:10:49.968] [Device0] deal with 1 of 1 gps fmt2 frames
+[2023-02-17 13:10:50.906] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/status, dataLen=72
+[2023-02-17 13:10:50.000] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/raw, dataLen=54
+[2023-02-17 13:10:50.000] [Device0] deal with 1 of 1 gps fmt2 frames
+[2023-02-17 13:10:51.921] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/status, dataLen=72
+[2023-02-17 13:10:51.015] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/raw, dataLen=54
+[2023-02-17 13:10:51.015] [Device0] deal with 1 of 1 gps fmt2 frames
+[2023-02-17 13:10:52.937] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/status, dataLen=72
+[2023-02-17 13:10:52.000] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/raw, dataLen=54
+[2023-02-17 13:10:52.000] [Device0] deal with 1 of 1 gps fmt2 frames
+[2023-02-17 13:10:53.953] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/status, dataLen=72
+[2023-02-17 13:10:53.046] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/raw, dataLen=54
+[2023-02-17 13:10:53.046] [Device0] deal with 1 of 1 gps fmt2 frames
+[2023-02-17 13:10:54.906] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/status, dataLen=72
+[2023-02-17 13:10:54.968] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/raw, dataLen=54
+[2023-02-17 13:10:54.968] [Device0] deal with 1 of 1 gps fmt2 frames
+[2023-02-17 13:10:55.921] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/status, dataLen=72
+[2023-02-17 13:10:55.984] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/raw, dataLen=54
+[2023-02-17 13:10:55.984] [Device0] deal with 1 of 1 gps fmt2 frames
+[2023-02-17 13:10:56.921] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/status, dataLen=72
+[2023-02-17 13:10:56.015] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/raw, dataLen=54
+[2023-02-17 13:10:56.015] [Device0] deal with 1 of 1 gps fmt2 frames
+[2023-02-17 13:10:57.875] recv topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/status, dataLen=72
+[2023-02-17 13:10:57.890] unsubscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/online
+[2023-02-17 13:10:57.921] unsubscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/offline
+[2023-02-17 13:10:57.921] unsubscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/status
+[2023-02-17 13:10:57.937] unsubscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/data
+[2023-02-17 13:10:57.953] unsubscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/raw
+[2023-02-17 13:10:57.968] unsubscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/warning
+[2023-02-17 13:10:57.968] unsubscribe topic: /d2s/LeoLiu/can-common/B66B01FF1439324A3250/error
+[2023-02-17 15:10:36.171] mqtt disconnected callback.
+[2023-02-17 15:10:36.171] auto reconnect is enabled, reconnecting attempt will start now
+[2023-02-17 15:10:37.171] MQTT will reconnect...
+[2023-02-17 15:10:37.171] relogin...
+[2023-02-17 15:10:37.171] LeoLiu login...
+[2023-02-17 15:10:37.203] [ERR] Login failed when mqtt reconnect, ret=2
+[2023-02-17 15:10:39.234] MQTT will reconnect...
+[2023-02-17 15:10:39.250] relogin...
+[2023-02-17 15:10:39.250] LeoLiu login...
+[2023-02-17 15:10:41.515] login_on_body: {"result":true,"message":"OK","data":{"username":"LeoLiu"},"jwt":"051bf64cba834a14b1a7101a239e8f7d"}
+[2023-02-17 15:10:41.515] login token: 051bf64cba834a14b1a7101a239e8f7d
+[2023-02-17 15:10:41.515] login success.
+[2023-02-17 15:10:41.515] Query devices ...
+[2023-02-17 15:10:41.937] query_devices_on_body: {"result":true,"message":"OK","data":[{"FlashOk":0,"devid":"B66B01FF1439324A3250","owner":"LeoLiu","UploadStat":0,"SDStat":2,"FwVer":"V1.01.02","CANInfo":{"CAN3":{"IsUpload"...
+[2023-02-17 15:10:41.937] Device0: L2_C2 can-common CANFDDTU-400EWGR B66B01FF1439324A3250 offline.
+[2023-02-17 15:10:41.937] Device1: L2_B1 can-common CANFDDTU-400EWGR AC6B01FF221A374C3250 online.
+[2023-02-17 15:10:41.937] Device2: L2_C3 can-common CANFDDTU-400EWGR B86B01FF0D42324A3250 online.
+[2023-02-17 15:10:41.937] Device3: RedCar can-common CANFDDTU-400EWGR E76B01FF4631374C3250 offline.
+[2023-02-17 15:10:42.453] mqtt reconnected.
+[2023-02-17 15:11:49.859] mqtt disconnected callback.
+[2023-02-17 15:11:49.859] auto reconnect is enabled, reconnecting attempt will start now
+[2023-02-17 15:11:50.859] MQTT will reconnect...
+[2023-02-17 15:11:50.859] relogin...
+[2023-02-17 15:11:50.859] LeoLiu login...
+[2023-02-17 15:11:51.328] login_on_body: {"result":true,"message":"OK","data":{"username":"LeoLiu"},"jwt":"22735ea3c26947abb513de3511ff3f69"}
+[2023-02-17 15:11:51.328] login token: 22735ea3c26947abb513de3511ff3f69
+[2023-02-17 15:11:51.328] login success.
+[2023-02-17 15:11:51.328] Query devices ...
+[2023-02-17 15:11:51.656] query_devices_on_body: {"result":true,"message":"OK","data":[{"FlashOk":0,"devid":"B66B01FF1439324A3250","owner":"LeoLiu","UploadStat":0,"SDStat":2,"FwVer":"V1.01.02","CANInfo":{"CAN3":{"IsUpload"...
+[2023-02-17 15:11:51.656] Device0: L2_C2 can-common CANFDDTU-400EWGR B66B01FF1439324A3250 offline.
+[2023-02-17 15:11:51.656] Device1: L2_B1 can-common CANFDDTU-400EWGR AC6B01FF221A374C3250 online.
+[2023-02-17 15:11:51.656] Device2: L2_C3 can-common CANFDDTU-400EWGR B86B01FF0D42324A3250 online.
+[2023-02-17 15:11:51.656] Device3: RedCar can-common CANFDDTU-400EWGR E76B01FF4631374C3250 offline.
+[2023-02-17 15:11:51.890] mqtt reconnected.
+[2023-02-17 15:20:28.562] Disconnect server ...
+[2023-02-17 15:20:28.593] mqtt loop exit.
+[2023-02-17 15:20:28.593] mqtt disconnecting...
+[2023-02-17 15:20:28.593] mqtt disconnected.
+[2023-02-17 15:20:28.593] LeoLiu logout...
+[2023-02-17 15:20:28.000] logout_on_body: {"timestamp":"2023-02-17T07:20:29.300+00:00","path":"/v1/auth/logout","status":404,"error":"Not Found","message":null,"requestId":"02f49d2f-984452"}

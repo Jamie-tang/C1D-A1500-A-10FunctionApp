@@ -1,0 +1,9 @@
+C:\Users\IPC209\Desktop\CAN分析仪二次开发示例源代码20240911\C#_Example\C#_Example(VS2019)\WindowsApplication1\obj\x64\Debug\C3D-B150A-A-10_CAN.csproj.AssemblyReference.cache
+C:\Users\IPC209\Desktop\CAN分析仪二次开发示例源代码20240911\C#_Example\C#_Example(VS2019)\WindowsApplication1\obj\x64\Debug\WindowsApplication1.Form1.resources
+C:\Users\IPC209\Desktop\CAN分析仪二次开发示例源代码20240911\C#_Example\C#_Example(VS2019)\WindowsApplication1\obj\x64\Debug\WindowsApplication1.Properties.Resources.resources
+C:\Users\IPC209\Desktop\CAN分析仪二次开发示例源代码20240911\C#_Example\C#_Example(VS2019)\WindowsApplication1\obj\x64\Debug\C3D-B150A-A-10_CAN.csproj.GenerateResource.cache
+C:\Users\IPC209\Desktop\CAN分析仪二次开发示例源代码20240911\C#_Example\C#_Example(VS2019)\WindowsApplication1\obj\x64\Debug\C3D-B150A-A-10_CAN.csproj.CoreCompileInputs.cache
+C:\Users\IPC209\Desktop\CAN分析仪二次开发示例源代码20240911\C#_Example\C#_Example(VS2019)\WindowsApplication1\bin\x64\Debug\C3D-B150A-A-10_CAN.exe
+C:\Users\IPC209\Desktop\CAN分析仪二次开发示例源代码20240911\C#_Example\C#_Example(VS2019)\WindowsApplication1\bin\x64\Debug\C3D-B150A-A-10_CAN.pdb
+C:\Users\IPC209\Desktop\CAN分析仪二次开发示例源代码20240911\C#_Example\C#_Example(VS2019)\WindowsApplication1\obj\x64\Debug\C3D-B150A-A-10_CAN.exe
+C:\Users\IPC209\Desktop\CAN分析仪二次开发示例源代码20240911\C#_Example\C#_Example(VS2019)\WindowsApplication1\obj\x64\Debug\C3D-B150A-A-10_CAN.pdb

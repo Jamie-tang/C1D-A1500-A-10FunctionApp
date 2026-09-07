@@ -1,0 +1,21 @@
+[2024-01-31 17:54:55.319] ================= Logging =================
+[2024-01-31 17:54:55.319] Device Statistic RecvMerge RxMerge:0 RxMergeDrop:0 TxMerge:0 AppRxMerge:0
+[2024-01-31 17:58:00.225] ================= Logging =================
+[2024-01-31 17:58:00.225] Device Statistic RecvMerge RxMerge:0 RxMergeDrop:0 TxMerge:0 AppRxMerge:0
+[2024-01-31 18:01:18.745] CanDataQueueCircleBuffer<struct tagZCAN_CHANNEL_ERR_INFO>::reallocMemory realloc to 2000, cap:1000 cap_max:1024000 front:0 rear:0 size:1000 
+[2024-01-31 18:01:18.745] CanDataQueueCircleBuffer<struct tagZCAN_CHANNEL_ERR_INFO>::reallocMemory realloc done, cap:2000 cap_max:1024000 front:0 rear:1000 size:1000 
+[2024-01-31 18:01:18.771] CanDataQueueCircleBuffer<struct tagZCAN_CHANNEL_ERR_INFO>::reallocMemory realloc to 4000, cap:2000 cap_max:1024000 front:0 rear:0 size:2000 
+[2024-01-31 18:01:18.771] CanDataQueueCircleBuffer<struct tagZCAN_CHANNEL_ERR_INFO>::reallocMemory realloc done, cap:4000 cap_max:1024000 front:0 rear:2000 size:2000 
+[2024-01-31 18:01:18.823] CanDataQueueCircleBuffer<struct tagZCAN_CHANNEL_ERR_INFO>::reallocMemory realloc to 8000, cap:4000 cap_max:1024000 front:0 rear:0 size:4000 
+[2024-01-31 18:01:18.823] CanDataQueueCircleBuffer<struct tagZCAN_CHANNEL_ERR_INFO>::reallocMemory realloc done, cap:8000 cap_max:1024000 front:0 rear:4000 size:4000 
+[2024-01-31 18:01:18.927] CanDataQueueCircleBuffer<struct tagZCAN_CHANNEL_ERR_INFO>::reallocMemory realloc to 16000, cap:8000 cap_max:1024000 front:0 rear:0 size:8000 
+[2024-01-31 18:01:18.927] CanDataQueueCircleBuffer<struct tagZCAN_CHANNEL_ERR_INFO>::reallocMemory realloc done, cap:16000 cap_max:1024000 front:0 rear:8000 size:8000 
+[2024-01-31 18:01:19.132] CanDataQueueCircleBuffer<struct tagZCAN_CHANNEL_ERR_INFO>::reallocMemory realloc to 32000, cap:16000 cap_max:1024000 front:0 rear:0 size:16000 
+[2024-01-31 18:01:19.132] CanDataQueueCircleBuffer<struct tagZCAN_CHANNEL_ERR_INFO>::reallocMemory realloc done, cap:32000 cap_max:1024000 front:0 rear:16000 size:16000 
+[2024-01-31 18:01:19.545] CanDataQueueCircleBuffer<struct tagZCAN_CHANNEL_ERR_INFO>::reallocMemory realloc to 64000, cap:32000 cap_max:1024000 front:0 rear:0 size:32000 
+[2024-01-31 18:01:19.545] CanDataQueueCircleBuffer<struct tagZCAN_CHANNEL_ERR_INFO>::reallocMemory realloc done, cap:64000 cap_max:1024000 front:0 rear:32000 size:32000 
+[2024-01-31 18:02:19.032] ================= Logging =================
+[2024-01-31 18:02:19.032] Device Statistic RecvMerge RxMerge:0 RxMergeDrop:0 TxMerge:0 AppRxMerge:0
+[2024-01-31 18:02:39.912] [ERR] USBDevice::_WritePipe UserCancel, Transfered(0)
+[2024-01-31 18:02:39.912] [ERR] DeviceDataTransfer::RequestDevDataSync SendTxData send data error
+[2024-01-31 18:02:40.558] Device Statistic RecvMerge RxMerge:0 RxMergeDrop:0 TxMerge:0 AppRxMerge:0

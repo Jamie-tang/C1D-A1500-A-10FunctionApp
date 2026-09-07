@@ -1,0 +1,358 @@
+{
+  "Format": "ZlgCanWpf.CalibrationBackup",
+  "Version": 1,
+  "CreatedAt": "2026-09-05T15:41:35.1088953+08:00",
+  "SourceAddress": 128,
+  "Items": [
+    {
+      "Type": 81,
+      "Index": 0,
+      "Value": 779
+    },
+    {
+      "Type": 81,
+      "Index": 1,
+      "Value": 769
+    },
+    {
+      "Type": 81,
+      "Index": 2,
+      "Value": 65074
+    },
+    {
+      "Type": 81,
+      "Index": 3,
+      "Value": 65140
+    },
+    {
+      "Type": 81,
+      "Index": 4,
+      "Value": 1785
+    },
+    {
+      "Type": 81,
+      "Index": 5,
+      "Value": 54808
+    },
+    {
+      "Type": 82,
+      "Index": 0,
+      "Value": 787
+    },
+    {
+      "Type": 82,
+      "Index": 1,
+      "Value": 781
+    },
+    {
+      "Type": 82,
+      "Index": 2,
+      "Value": 65122
+    },
+    {
+      "Type": 82,
+      "Index": 3,
+      "Value": 65162
+    },
+    {
+      "Type": 82,
+      "Index": 4,
+      "Value": 1751
+    },
+    {
+      "Type": 82,
+      "Index": 5,
+      "Value": 22808
+    },
+    {
+      "Type": 83,
+      "Index": 0,
+      "Value": 773
+    },
+    {
+      "Type": 83,
+      "Index": 1,
+      "Value": 769
+    },
+    {
+      "Type": 83,
+      "Index": 2,
+      "Value": 65135
+    },
+    {
+      "Type": 83,
+      "Index": 3,
+      "Value": 65173
+    },
+    {
+      "Type": 83,
+      "Index": 4,
+      "Value": 2128
+    },
+    {
+      "Type": 83,
+      "Index": 5,
+      "Value": 18200
+    },
+    {
+      "Type": 84,
+      "Index": 0,
+      "Value": 783
+    },
+    {
+      "Type": 84,
+      "Index": 1,
+      "Value": 775
+    },
+    {
+      "Type": 84,
+      "Index": 2,
+      "Value": 65101
+    },
+    {
+      "Type": 84,
+      "Index": 3,
+      "Value": 65172
+    },
+    {
+      "Type": 84,
+      "Index": 4,
+      "Value": 2112
+    },
+    {
+      "Type": 84,
+      "Index": 5,
+      "Value": 18456
+    },
+    {
+      "Type": 85,
+      "Index": 0,
+      "Value": 773
+    },
+    {
+      "Type": 85,
+      "Index": 1,
+      "Value": 775
+    },
+    {
+      "Type": 85,
+      "Index": 2,
+      "Value": 65129
+    },
+    {
+      "Type": 85,
+      "Index": 3,
+      "Value": 65118
+    },
+    {
+      "Type": 85,
+      "Index": 4,
+      "Value": 2130
+    },
+    {
+      "Type": 85,
+      "Index": 5,
+      "Value": 44056
+    },
+    {
+      "Type": 86,
+      "Index": 0,
+      "Value": 778
+    },
+    {
+      "Type": 86,
+      "Index": 1,
+      "Value": 793
+    },
+    {
+      "Type": 86,
+      "Index": 2,
+      "Value": 783
+    },
+    {
+      "Type": 86,
+      "Index": 3,
+      "Value": 59364
+    },
+    {
+      "Type": 86,
+      "Index": 4,
+      "Value": 59239
+    },
+    {
+      "Type": 86,
+      "Index": 5,
+      "Value": 59326
+    },
+    {
+      "Type": 86,
+      "Index": 6,
+      "Value": 2167
+    },
+    {
+      "Type": 86,
+      "Index": 7,
+      "Value": 2362
+    },
+    {
+      "Type": 86,
+      "Index": 8,
+      "Value": 48920
+    },
+    {
+      "Type": 86,
+      "Index": 9,
+      "Value": 0
+    },
+    {
+      "Type": 87,
+      "Index": 0,
+      "Value": 794
+    },
+    {
+      "Type": 87,
+      "Index": 1,
+      "Value": 789
+    },
+    {
+      "Type": 87,
+      "Index": 2,
+      "Value": 776
+    },
+    {
+      "Type": 87,
+      "Index": 3,
+      "Value": 59194
+    },
+    {
+      "Type": 87,
+      "Index": 4,
+      "Value": 59239
+    },
+    {
+      "Type": 87,
+      "Index": 5,
+      "Value": 59356
+    },
+    {
+      "Type": 87,
+      "Index": 6,
+      "Value": 2178
+    },
+    {
+      "Type": 87,
+      "Index": 7,
+      "Value": 2374
+    },
+    {
+      "Type": 87,
+      "Index": 8,
+      "Value": 49688
+    },
+    {
+      "Type": 87,
+      "Index": 9,
+      "Value": 65535
+    },
+    {
+      "Type": 88,
+      "Index": 0,
+      "Value": 783
+    },
+    {
+      "Type": 88,
+      "Index": 1,
+      "Value": 782
+    },
+    {
+      "Type": 88,
+      "Index": 2,
+      "Value": 781
+    },
+    {
+      "Type": 88,
+      "Index": 3,
+      "Value": 59269
+    },
+    {
+      "Type": 88,
+      "Index": 4,
+      "Value": 57881
+    },
+    {
+      "Type": 88,
+      "Index": 5,
+      "Value": 57892
+    },
+    {
+      "Type": 88,
+      "Index": 6,
+      "Value": 2231
+    },
+    {
+      "Type": 88,
+      "Index": 7,
+      "Value": 2506
+    },
+    {
+      "Type": 88,
+      "Index": 8,
+      "Value": 0
+    },
+    {
+      "Type": 88,
+      "Index": 9,
+      "Value": 0
+    },
+    {
+      "Type": 89,
+      "Index": 0,
+      "Value": 783
+    },
+    {
+      "Type": 89,
+      "Index": 1,
+      "Value": 782
+    },
+    {
+      "Type": 89,
+      "Index": 2,
+      "Value": 781
+    },
+    {
+      "Type": 89,
+      "Index": 3,
+      "Value": 59269
+    },
+    {
+      "Type": 89,
+      "Index": 4,
+      "Value": 57881
+    },
+    {
+      "Type": 89,
+      "Index": 5,
+      "Value": 57892
+    },
+    {
+      "Type": 89,
+      "Index": 6,
+      "Value": 2231
+    },
+    {
+      "Type": 89,
+      "Index": 7,
+      "Value": 2506
+    },
+    {
+      "Type": 89,
+      "Index": 8,
+      "Value": 0
+    },
+    {
+      "Type": 89,
+      "Index": 9,
+      "Value": 0
+    }
+  ]
+}
