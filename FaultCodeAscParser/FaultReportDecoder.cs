@@ -24,6 +24,10 @@ public static class FaultReportDecoder
 
     private static IReadOnlyList<FaultOccurrence> DecodeCharger(AscFrame frame)
     {
+        /*
+         * 固件已将原始 bVinIsGood 转换为故障位图：原始值1表示正常，
+         * 但 CAN 故障位图中的 bit0 仍遵循1表示故障、0表示正常。
+         */
         var result = DecodeBitmap(frame, "充电器", 1, 3, "实时").ToList();
         result.AddRange(DecodeBitmap(frame, "充电器", 4, 2, "锁存"));
 

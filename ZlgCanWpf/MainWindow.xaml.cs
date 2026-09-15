@@ -2,6 +2,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
 using System.IO;
+using System.Text;
 using System.Text.Json;
 using Microsoft.Win32;
 using System.Windows;
@@ -16,6 +17,7 @@ public partial class MainWindow : Window
 {
     private const int MaxVisibleFrames = 5000;
     private const ushort SetPsuRunId = 0x082B;
+    private const ushort SetPsuChrgMaxIoutId = 0x0832;
     private const ushort FactoryModeId = 0x1F2D;
     private const ushort AgingModeId = 0x1F2E;
     private const ushort CalibrationId = 0x1F2C;
@@ -88,15 +90,24 @@ public partial class MainWindow : Window
     private byte _telemetryTargetAddress;
     private long _receiveCount;
     private long _transmitCount;
-    private uint? _frameIdFilter;
+    private string? _frameIdFilterKeyword;
+    private bool _frameAutoScrollPending;
+    /* 暂停读取只停止接收帧进入报文列表，CAN通道和校准应答处理继续运行。 */
+    private volatile bool _frameReceptionPaused;
     private bool _requestTemperatureData;
     private bool _calibrationReadInProgress;
     private bool _calibrationFlagReadInProgress;
     private bool _commandSequenceInProgress;
     private bool _closing;
+    private IReadOnlyList<AscFrame> _allFaultAscFrames = Array.Empty<AscFrame>();
+    private string _faultAscStatusText = "请选择 ASC 文件，或从 CAN 实时接收故障报码。";
 
     public ObservableCollection<CanFrameRecord> Frames { get; } = new();
     public ObservableCollection<CalibrationValueRecord> CalibrationValues { get; } = new();
+    public ObservableCollection<AscFrame> FaultAscFrames { get; } = new();
+    public ObservableCollection<FaultOccurrence> FaultOccurrences { get; } = new();
+    public ObservableCollection<FaultVisualRow> RealtimeFaultVisualRows { get; } = new();
+    public ObservableCollection<FaultVisualRow> LatchedFaultVisualRows { get; } = new();
 
     public MainWindow()
     {
@@ -465,11 +476,12 @@ public partial class MainWindow : Window
             {
                 byte mergedAddress = ParsePsuAddress();
                 byte floatingAddress = ParseFloatingPsuAddress();
+                byte totalCurrent = ParseParallelTotalCurrent();
                 ValidateParallelAddressPair(mergedAddress, floatingAddress);
 
-                byte[] data =
+                byte[] parallelData =
                 {
-                    0x06,
+                    0x05,
                     0xFF,
                     0xFF,
                     0x7F,
@@ -479,12 +491,23 @@ public partial class MainWindow : Window
                     floatingAddress
                 };
 
-                /* 主控需要向合并路和悬空路发送相同的并联命令，data7均填写悬空路地址。 */
-                SendChargerCommand(SetPsuRunId, mergedAddress, data,
+                /*
+                 * 主控只向合并路发送0x082B/data0=0x05；合并路负责转发、双路确认，
+                 * 悬空路不再直接接收主控的并联进入命令。
+                 */
+                SendChargerCommand(SetPsuRunId, mergedAddress, parallelData,
                     "正在向合并路发送进入并联指令", false);
                 await Task.Delay(100);
-                SendChargerCommand(SetPsuRunId, floatingAddress, data,
-                    $"已发送进入并联指令：合并路0x{mergedAddress:X2}，悬空路0x{floatingAddress:X2}");
+
+                /*
+                 * 0x0832的data0是总电流，只发给合并路。固件将其均分为两路相同的
+                 * 本地限流值，并由合并路使用内部0x0832转发给悬空路。
+                 */
+                byte[] currentData = { totalCurrent, 0, 0, 0, 0, 0, 0, 0 };
+                SendChargerCommand(SetPsuChrgMaxIoutId, mergedAddress, currentData,
+                    $"已发送进入并联指令：合并路0x{mergedAddress:X2}，"
+                    + $"悬空路0x{floatingAddress:X2}由合并路确认；总电流{totalCurrent}A，"
+                    + $"每路{totalCurrent / 2}A");
             }
             finally
             {
@@ -1019,6 +1042,7 @@ public partial class MainWindow : Window
                 DataText = CanFrameRecord.FormatData(request.Data)
             });
             TrimFrameList();
+            ScrollFrameListToBottom();
             UpdateCounter();
             SetStatus($"已发送1帧，ID={request.Id:X}");
         });
@@ -1038,23 +1062,15 @@ public partial class MainWindow : Window
     {
         RunUiAction(() =>
         {
-            uint frameId = ParseCanId(FrameIdFilterTextBox.Text, "筛选帧ID");
-            if (frameId > 0x1FFFFFFF)
-            {
-                throw new ArgumentOutOfRangeException(
-                    nameof(frameId),
-                    "筛选帧ID必须在0x00000000～0x1FFFFFFF范围内。");
-            }
-
-            _frameIdFilter = frameId;
+            _frameIdFilterKeyword = ParseFrameIdFilterKeyword(FrameIdFilterTextBox.Text);
             _frameView.Refresh();
-            SetStatus($"已按帧ID 0x{frameId:X8}筛选报文");
+            SetStatus($"已按帧ID十六进制片段 0x{_frameIdFilterKeyword} 筛选报文");
         });
     }
 
     private void ClearFrameIdFilterButton_Click(object sender, RoutedEventArgs e)
     {
-        _frameIdFilter = null;
+        _frameIdFilterKeyword = null;
         FrameIdFilterTextBox.Clear();
         _frameView.Refresh();
         SetStatus("已清除帧ID筛选");
@@ -1063,7 +1079,106 @@ public partial class MainWindow : Window
     private bool FilterFrame(object item)
     {
         return item is CanFrameRecord frame
-            && (!_frameIdFilter.HasValue || (frame.RawId == _frameIdFilter.Value));
+            && (string.IsNullOrEmpty(_frameIdFilterKeyword)
+                || frame.RawId.ToString("X8", CultureInfo.InvariantCulture)
+                    .Contains(_frameIdFilterKeyword, StringComparison.OrdinalIgnoreCase));
+    }
+
+    /// <summary>将下方 CAN 报文表保持在最新可见帧；高速收帧时合并同一轮 UI 的重复滚动请求。</summary>
+    private void ScrollFrameListToBottom()
+    {
+        if (_frameAutoScrollPending)
+        {
+            return;
+        }
+
+        _frameAutoScrollPending = true;
+        Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() =>
+        {
+            _frameAutoScrollPending = false;
+            if (FrameDataGrid.Items.Count > 0)
+            {
+                FrameDataGrid.ScrollIntoView(FrameDataGrid.Items[FrameDataGrid.Items.Count - 1]);
+            }
+        }));
+    }
+
+    /// <summary>暂停或恢复接收帧进入报文列表，不停止CAN通道和后台接收线程。</summary>
+    private void PauseFrameReceptionButton_Click(object sender, RoutedEventArgs e)
+    {
+        _frameReceptionPaused = !_frameReceptionPaused;
+        PauseFrameReceptionButton.Content = _frameReceptionPaused ? "继续读取" : "暂停读取";
+        SetStatus(_frameReceptionPaused
+            ? "报文读取已暂停，CAN通道保持运行，暂停期间接收帧不加入列表"
+            : "报文读取已恢复，开始显示新接收帧");
+    }
+
+    /// <summary>将当前列表中的经典CAN数据帧保存为可由本工具重新读取的ASC文件。</summary>
+    private async void SaveFramesAscButton_Click(object sender, RoutedEventArgs e)
+    {
+        await RunUiActionAsync(SaveFramesAsAscAsync);
+    }
+
+    private async Task SaveFramesAsAscAsync()
+    {
+        /* 在UI线程生成快照，避免保存过程中实时接收修改ObservableCollection。 */
+        List<CanFrameRecord> exportFrames = Frames
+            .Where(frame => (frame.FrameType == "CAN") && (frame.FrameKind == "数据帧"))
+            .ToList();
+        if (exportFrames.Count == 0)
+        {
+            throw new InvalidOperationException("当前列表中没有可保存的经典CAN数据帧。");
+        }
+
+        SaveFileDialog dialog = new()
+        {
+            Filter = "ASC 日志文件 (*.asc)|*.asc|所有文件 (*.*)|*.*",
+            FileName = $"CAN_{DateTime.Now:yyyyMMdd_HHmmss}.asc",
+            Title = "保存当前CAN报文列表"
+        };
+        if (dialog.ShowDialog(this) != true)
+        {
+            return;
+        }
+
+        int channel = Math.Max(1, ChannelComboBox.SelectedIndex + 1);
+        int skippedFrameCount = Frames.Count - exportFrames.Count;
+        await Task.Run(() => WriteAscFile(dialog.FileName, exportFrames, channel));
+
+        /* ASC仅保存经典CAN数据帧，CAN FD、远程帧和错误帧不写入当前格式。 */
+        SetStatus($"已保存{exportFrames.Count}帧ASC报文：{dialog.FileName}"
+            + (skippedFrameCount > 0 ? $"；跳过{skippedFrameCount}帧非经典CAN数据" : string.Empty));
+    }
+
+    private static void WriteAscFile(string fileName, IReadOnlyList<CanFrameRecord> frames, int channel)
+    {
+        DateTime initialTime = frames[0].ReceivedAt;
+        CultureInfo enUs = CultureInfo.GetCultureInfo("en-US");
+
+        /* 使用无BOM UTF-8和Vector常见头部，确保现有AscParser可以直接回读。 */
+        using var writer = new StreamWriter(fileName, false, new UTF8Encoding(false));
+        writer.WriteLine($"date {initialTime.ToString("ddd MMM dd HH:mm:ss.fff yyyy", enUs)}");
+        writer.WriteLine("base hex  timestamps absolute");
+        writer.WriteLine("no internal events logged");
+        writer.WriteLine("Begin Triggerblock");
+
+        foreach (CanFrameRecord frame in frames)
+        {
+            double timestamp = Math.Max(0, (frame.ReceivedAt - initialTime).TotalSeconds);
+            string canId = frame.Format == "扩展帧"
+                ? $"{frame.RawId:X8}x"
+                : $"{frame.RawId:X3}";
+            string direction = frame.Direction == "TX" ? "Tx" : "Rx";
+            int dataLength = Math.Min(8, Math.Min(frame.Length, frame.Data.Length));
+            string dataText = CanFrameRecord.FormatData(frame.Data.AsSpan(0, dataLength));
+            string line = $"{timestamp.ToString("F6", CultureInfo.InvariantCulture)} "
+                + $"{channel} {canId} {direction} d {dataLength}";
+
+            /* data0起的数据为空时不追加尾部空格，保持ASC行格式整洁。 */
+            writer.WriteLine(dataLength > 0 ? $"{line} {dataText}" : line);
+        }
+
+        writer.WriteLine("End TriggerBlock");
     }
 
     private void ClearHardwareBufferButton_Click(object sender, RoutedEventArgs e)
@@ -1113,15 +1228,29 @@ public partial class MainWindow : Window
 
     private void Service_FrameReceived(object? sender, CanFrameRecord frame)
     {
+        /* 暂停报文列表时仍处理校准应答，避免校准读写因暂停显示而超时。 */
         TryCompleteCalibrationResponse(frame);
         TryCompleteCalibrationFlagResponse(frame);
 
+        /* 在进入UI队列前丢弃暂停期间的接收帧，防止高速报文持续堆积Dispatcher任务。 */
+        if (_frameReceptionPaused)
+        {
+            return;
+        }
+
         Dispatcher.BeginInvoke(new Action(() =>
         {
+            /* 点击暂停前已排队但尚未执行的帧也不再写入列表。 */
+            if (_frameReceptionPaused)
+            {
+                return;
+            }
+
             TryUpdateChargerMeasurements(frame);
             Frames.Add(frame);
             _receiveCount++;
             TrimFrameList();
+            ScrollFrameListToBottom();
             UpdateCounter();
         }));
     }
@@ -1166,6 +1295,242 @@ public partial class MainWindow : Window
 
         TelemetryAddressTextBlock.Text = $"0x{sourceAddress:X2}";
         TelemetryUpdateTimeTextBlock.Text = $"最后更新：{DateTime.Now:HH:mm:ss}";
+    }
+
+    /// <summary>导入 ASC 文件并保留 ASC 工具原有的首行 date 时间基准、进度和非标准行统计。</summary>
+    private async void OpenFaultAscButton_Click(object sender, RoutedEventArgs e)
+    {
+        var dialog = new OpenFileDialog
+        {
+            Title = "选择 Vector ASC 日志文件",
+            Filter = "ASC 日志文件 (*.asc)|*.asc|所有文件 (*.*)|*.*",
+            CheckFileExists = true,
+            Multiselect = false
+        };
+        if (dialog.ShowDialog(this) != true)
+        {
+            return;
+        }
+
+        SetFaultAscReadingState(true);
+        _allFaultAscFrames = Array.Empty<AscFrame>();
+        FaultAscFramesDataGrid.ItemsSource = null;
+        FaultOccurrences.Clear();
+        ClearFaultVisualTable();
+        FaultAscFilePathTextBox.Text = dialog.FileName;
+
+        var progress = new Progress<int>(value =>
+        {
+            FaultAscReadProgressBar.Value = value;
+            FaultAscReadProgressTextBlock.Text = $"正在读取 ASC 文件：{value}%";
+        });
+
+        try
+        {
+            AscParseResult result = await Task.Run(() => AscParser.ParseAsync(dialog.FileName, progress));
+            _allFaultAscFrames = result.Frames;
+            _faultAscStatusText = $"初始记录时间：{result.InitialTime:yyyy-MM-dd HH:mm:ss.fff}；"
+                + $"已读取 {_allFaultAscFrames.Count} 帧 CAN 数据，跳过 {result.IgnoredLineCount} 行非标准 ASC 数据。";
+            ApplyFaultAscFrameFilter();
+        }
+        catch (Exception exception)
+        {
+            _allFaultAscFrames = Array.Empty<AscFrame>();
+            FaultAscFramesDataGrid.ItemsSource = null;
+            FaultOccurrences.Clear();
+            ClearFaultVisualTable();
+            SetFaultStatus("ASC 文件解析失败。");
+            MessageBox.Show(this, exception.Message, "解析 ASC 文件失败", MessageBoxButton.OK,
+                MessageBoxImage.Error);
+        }
+        finally
+        {
+            SetFaultAscReadingState(false);
+        }
+    }
+
+    /// <summary>大 ASC 文件读取期间禁用导入、筛选和编辑，防止重入导致列表状态不一致。</summary>
+    private void SetFaultAscReadingState(bool isReading)
+    {
+        OpenFaultAscButton.IsEnabled = !isReading;
+        FaultAscFrameIdFilterTextBox.IsEnabled = !isReading;
+        FaultAscFramesDataGrid.IsEnabled = !isReading;
+        FaultAscReadProgressPanel.Visibility = isReading ? Visibility.Visible : Visibility.Collapsed;
+        if (isReading)
+        {
+            FaultAscReadProgressBar.Value = 0;
+            FaultAscReadProgressTextBlock.Text = "正在读取 ASC 文件：0%";
+        }
+    }
+
+    /// <summary>按 CAN ID 十六进制任意片段筛选 ASC 导入帧，保留原工具的筛选方式。</summary>
+    private void FaultAscFrameIdFilterTextBox_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        ApplyFaultAscFrameFilter();
+    }
+
+    private void ApplyFaultAscFrameFilter()
+    {
+        string keyword = FaultAscFrameIdFilterTextBox.Text.Trim();
+        if (keyword.StartsWith("0x", StringComparison.OrdinalIgnoreCase))
+        {
+            keyword = keyword[2..];
+        }
+        keyword = keyword.TrimEnd('x', 'X');
+
+        /*
+         * ASC 文件可能包含数万帧。一次性设置 ItemsSource 可让 DataGrid 使用虚拟化显示，
+         * 避免逐条 Add 到 ObservableCollection 时在 UI 线程触发数万次布局刷新。
+         */
+        IReadOnlyList<AscFrame> filteredFrames = string.IsNullOrEmpty(keyword)
+            ? _allFaultAscFrames
+            : _allFaultAscFrames.Where(frame => frame.CanId.ToString("X")
+                .Contains(keyword, StringComparison.OrdinalIgnoreCase)).ToList();
+        FaultAscFramesDataGrid.ItemsSource = filteredFrames;
+
+        FaultOccurrences.Clear();
+        ClearFaultVisualTable();
+        SetFaultStatus(string.IsNullOrEmpty(keyword)
+            ? _faultAscStatusText
+            : $"{_faultAscStatusText}；帧 ID 包含“{keyword}”的报文：{filteredFrames.Count} 帧。");
+    }
+
+    /// <summary>ASC 表格与实时 CAN 表格共用同一套故障页解码、PDF 名称映射和 bit 位显示。</summary>
+    private void FaultFrame_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        if (sender is DataGrid { SelectedItem: AscFrame frame })
+        {
+            RefreshFaultFrame(frame);
+        }
+    }
+
+    /// <summary>ASC 报文允许编辑 ID、data0～data7；提交后重新解析编辑后的故障页。</summary>
+    private void FaultAscFramesDataGrid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
+    {
+        if (e.EditAction != DataGridEditAction.Commit)
+        {
+            return;
+        }
+
+        Dispatcher.BeginInvoke(new Action(() =>
+        {
+            if (FaultAscFramesDataGrid.SelectedItem is AscFrame frame)
+            {
+                RefreshFaultFrame(frame);
+            }
+        }));
+    }
+
+    /// <summary>下方 CAN 报文在帧 ID 筛选后仍可直接选择，选中有效故障页时跳转到上方解析页面。</summary>
+    private void FrameDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        if (FrameDataGrid.SelectedItem is not CanFrameRecord frame)
+        {
+            return;
+        }
+
+        AscFrame faultFrame = CreateFaultFrame(frame);
+        if (!FaultReportDecoder.IsFaultReportFrame(faultFrame))
+        {
+            return;
+        }
+
+        TopFunctionTabControl.SelectedIndex = 1;
+        RefreshFaultFrame(faultFrame);
+    }
+
+    /// <summary>实时 CAN 记录没有 ASC 行号和相对秒，使用本机接收时间作为故障页显示时间。</summary>
+    private static AscFrame CreateFaultFrame(CanFrameRecord frame)
+    {
+        return new AscFrame(0, 0, frame.RawId, frame.RawId > 0x7FF,
+            frame.Direction, frame.Data.ToArray(), 0, frame.ReceivedAt);
+    }
+
+    /// <summary>刷新已选故障页的已解码项、实时位图与锁存位图。</summary>
+    private void RefreshFaultFrame(AscFrame frame)
+    {
+        FaultOccurrences.Clear();
+        if (!FaultReportDecoder.IsFaultReportFrame(frame))
+        {
+            ClearFaultVisualTable();
+            SetFaultStatus(frame.SourceLine > 0
+                ? $"第 {frame.SourceLine} 行的 CAN ID、data0 页面或数据长度不符合故障报码协议。"
+                : "当前实时 CAN 帧的 ID、data0 页面或数据长度不符合故障报码协议。");
+            return;
+        }
+
+        IReadOnlyList<FaultOccurrence> occurrences = FaultReportDecoder.Decode(frame);
+        foreach (FaultOccurrence occurrence in occurrences)
+        {
+            FaultOccurrences.Add(occurrence);
+        }
+
+        RefreshFaultVisualTable(frame);
+        string source = frame.SourceLine > 0 ? $"第 {frame.SourceLine} 行" : "当前实时 CAN 帧";
+        SetFaultStatus(occurrences.Count == 0
+            ? $"{source}是有效故障报码帧，但没有置位故障。"
+            : $"{source}解析到 {occurrences.Count} 条故障信息。");
+    }
+
+    /// <summary>按故障页的 data0 定义，将实时位图与锁存位图展开为完整 bit 位表。</summary>
+    private void RefreshFaultVisualTable(AscFrame frame)
+    {
+        var (domain, faultCount, activeCode, latchedCode, hasActive, hasLatched) = frame.Data[0] switch
+        {
+            0x10 => ("充电器", 18, ReadFaultBitmap(frame.Data, 1, 3), ReadFaultBitmap(frame.Data, 4, 2), true, true),
+            0x11 => ("电池", 32, ReadFaultBitmap(frame.Data, 1, 4), 0U, true, false),
+            0x12 => ("电池", 32, 0U, ReadFaultBitmap(frame.Data, 1, 4), false, true),
+            0x13 => ("RS485握手", 8, ReadFaultBitmap(frame.Data, 1, 1), ReadFaultBitmap(frame.Data, 2, 1), true, true),
+            0x14 => ("RS485周期查询", 16, ReadFaultBitmap(frame.Data, 1, 2), ReadFaultBitmap(frame.Data, 3, 2), true, true),
+            _ => (string.Empty, 0, 0U, 0U, false, false)
+        };
+
+        RealtimeFaultVisualRows.Clear();
+        LatchedFaultVisualRows.Clear();
+        foreach (FaultVisualRow row in BuildFaultVisualRows(domain, faultCount, activeCode))
+        {
+            RealtimeFaultVisualRows.Add(row);
+        }
+        foreach (FaultVisualRow row in BuildFaultVisualRows(domain, faultCount, latchedCode))
+        {
+            LatchedFaultVisualRows.Add(row);
+        }
+
+        FaultVisualDomainTextBlock.Text = $"当前页面：{domain}（data0 = 0x{frame.Data[0]:X2}）";
+        RealtimeFaultVisualTextBlock.Text = hasActive ? "实时故障位图" : "实时故障位图（当前页面不包含）";
+        LatchedFaultVisualTextBlock.Text = hasLatched ? "锁存故障位图" : "锁存故障位图（当前页面不包含）";
+    }
+
+    private static uint ReadFaultBitmap(byte[] data, int offset, int byteCount)
+    {
+        uint code = 0U;
+        for (int index = 0; index < byteCount; index++)
+        {
+            code |= (uint)data[offset + index] << (index * 8);
+        }
+        return code;
+    }
+
+    private static IReadOnlyList<FaultVisualRow> BuildFaultVisualRows(string domain, int faultCount, uint code)
+    {
+        return Enumerable.Range(0, faultCount)
+            .Select(bit => new FaultVisualRow(bit, FaultCatalog.GetName(domain, bit + 1),
+                (code & (1U << bit)) != 0U))
+            .ToList();
+    }
+
+    private void ClearFaultVisualTable()
+    {
+        RealtimeFaultVisualRows.Clear();
+        LatchedFaultVisualRows.Clear();
+        FaultVisualDomainTextBlock.Text = "请选择 data0 = 0x10～0x14 的故障报码报文。";
+        RealtimeFaultVisualTextBlock.Text = "实时故障位图";
+        LatchedFaultVisualTextBlock.Text = "锁存故障位图";
+    }
+
+    private void SetFaultStatus(string text)
+    {
+        FaultParserStatusTextBlock.Text = text;
     }
 
     private static ushort ReadUInt16LittleEndian(byte[] data, int index)
@@ -1350,6 +1715,18 @@ public partial class MainWindow : Window
         return (byte)address;
     }
 
+    private byte ParseParallelTotalCurrent()
+    {
+        if (!byte.TryParse(ParallelTotalCurrentTextBox.Text.Trim(), NumberStyles.Integer,
+            CultureInfo.InvariantCulture, out byte totalCurrent)
+            || (totalCurrent < 10) || (totalCurrent > 30))
+        {
+            throw new FormatException("并联总电流必须是10～30A的整数，固件会均分为两路电流。");
+        }
+
+        return totalCurrent;
+    }
+
     private static void ValidateParallelAddressPair(byte mergedAddress, byte floatingAddress)
     {
         bool isLabPair = ((mergedAddress == 0x80) && (floatingAddress == 0xBF))
@@ -1407,6 +1784,24 @@ public partial class MainWindow : Window
         }
 
         return data;
+    }
+
+    /// <summary>解析 CAN 报文列表筛选关键字；按十六进制片段匹配，不要求填写完整 29 位 ID。</summary>
+    private static string ParseFrameIdFilterKeyword(string text)
+    {
+        string keyword = text.Trim();
+        if (keyword.StartsWith("0x", StringComparison.OrdinalIgnoreCase))
+        {
+            keyword = keyword[2..];
+        }
+
+        if (string.IsNullOrWhiteSpace(keyword) || (keyword.Length > 8)
+            || keyword.Any(character => !Uri.IsHexDigit(character)))
+        {
+            throw new FormatException("筛选帧ID必须是1～8位十六进制片段，例如1F1C或1F1C1080。");
+        }
+
+        return keyword.ToUpperInvariant();
     }
 
     private static uint ParseCanId(string text, string fieldName)

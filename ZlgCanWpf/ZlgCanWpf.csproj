@@ -1,7 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <!-- 使用完整 Windows 平台 TFM，与 NuGet assets 目标键一致；7.0 是平台版本，不代表 Windows 7 运行时兼容性。 -->
+    <TargetFramework>net8.0-windows7.0</TargetFramework>
     <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -18,21 +19,25 @@
     <Compile Include="App.xaml.cs" />
     <Compile Include="MainWindow.xaml.cs" />
     <Compile Include="CanModels.cs" />
+    <Compile Include="FaultModels.cs" />
+    <Compile Include="FaultCatalog.cs" />
+    <Compile Include="FaultReportDecoder.cs" />
+    <Compile Include="AscParser.cs" />
     <Compile Include="ZlgCanNative.cs" />
     <Compile Include="ControlCanNative.cs" />
     <Compile Include="ZlgCanService.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="..\zlgcan_c#_20241120\ZLGCAN\bin\x64\Release\zlgcan.dll">
+    <Content Include="zlgcan_c#_20241120\ZLGCAN\bin\x64\Release\zlgcan.dll">
       <Link>zlgcan.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\C#_Example(VS2019)\WindowsApplication1\bin\x64\Release\ControlCAN.dll">
+    <Content Include="C#_Example(VS2019)\WindowsApplication1\bin\x64\Release\ControlCAN.dll">
       <Link>ControlCAN.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\zlgcan_c#_20241120\ZLGCAN\bin\x64\Release\kerneldlls\**\*">
+    <Content Include="zlgcan_c#_20241120\ZLGCAN\bin\x64\Release\kerneldlls\**\*">
       <Link>kerneldlls\%(RecursiveDir)%(Filename)%(Extension)</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

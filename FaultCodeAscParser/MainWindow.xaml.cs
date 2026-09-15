@@ -158,41 +158,60 @@ public partial class MainWindow : Window
 
         var occurrences = FaultReportDecoder.Decode(frame);
         FaultDataGrid.ItemsSource = occurrences;
-        RefreshFaultVisualTable(frame, occurrences);
+        RefreshFaultVisualTable(frame);
         StatusTextBlock.Text = occurrences.Count == 0
             ? $"第 {frame.SourceLine} 行是有效的故障报码帧，但没有置位故障。"
             : $"第 {frame.SourceLine} 行解析到 {occurrences.Count} 条故障信息。";
     }
 
-    /// <summary>将选中故障页对应故障域的全部 bit 位和故障含义显示在右侧两列表格中。</summary>
-    private void RefreshFaultVisualTable(AscFrame frame, IReadOnlyList<FaultOccurrence> occurrences)
+    /// <summary>将选中故障页的实时位图和锁存位图分别显示在右侧两个表格中。</summary>
+    private void RefreshFaultVisualTable(AscFrame frame)
     {
-        var (domain, faultCount) = frame.Data[0] switch
+        var (domain, faultCount, activeCode, latchedCode, hasActive, hasLatched) = frame.Data[0] switch
         {
-            0x10 => ("充电器", 18),
-            0x11 or 0x12 => ("电池", 32),
-            0x13 => ("RS485握手", 8),
-            0x14 => ("RS485周期查询", 16),
-            _ => ("", 0)
+            0x10 => ("充电器", 18, ReadFaultBitmap(frame.Data, 1, 3), ReadFaultBitmap(frame.Data, 4, 2), true, true),
+            0x11 => ("电池", 32, ReadFaultBitmap(frame.Data, 1, 4), 0U, true, false),
+            0x12 => ("电池", 32, 0U, ReadFaultBitmap(frame.Data, 1, 4), false, true),
+            0x13 => ("RS485握手", 8, ReadFaultBitmap(frame.Data, 1, 1), ReadFaultBitmap(frame.Data, 2, 1), true, true),
+            0x14 => ("RS485周期查询", 16, ReadFaultBitmap(frame.Data, 1, 2), ReadFaultBitmap(frame.Data, 3, 2), true, true),
+            _ => ("", 0, 0U, 0U, false, false)
         };
 
-        var setBits = occurrences
-            .Where(item => item.Domain == domain)
-            .Select(item => item.PdfNumber - 1)
-            .ToHashSet();
-
-        /* bit0 对应 PDF 编号1，依次生成当前故障域的全部定义；置位 bit 在 XAML 中显示为红色。 */
-        FaultVisualDataGrid.ItemsSource = Enumerable.Range(0, faultCount)
-            .Select(bit => new FaultVisualRow(bit, FaultCatalog.GetName(domain, bit + 1), setBits.Contains(bit)))
-            .ToList();
+        /* 两个表格直接读取各自位图，避免首次故障码或另一类位图影响当前表格的红色状态。 */
+        FaultVisualDataGrid.ItemsSource = BuildFaultVisualRows(domain, faultCount, activeCode);
+        LatchedFaultVisualDataGrid.ItemsSource = BuildFaultVisualRows(domain, faultCount, latchedCode);
         FaultVisualDomainTextBlock.Text = $"当前页面：{domain}（data0 = 0x{frame.Data[0]:X2}）";
+        RealtimeFaultVisualTextBlock.Text = hasActive ? "实时故障位图" : "实时故障位图（当前页面不包含）";
+        LatchedFaultVisualTextBlock.Text = hasLatched ? "锁存故障位图" : "锁存故障位图（当前页面不包含）";
     }
 
-    /// <summary>未选中有效故障报码时清空右侧 bit 位表。</summary>
+    /// <summary>按小端字节顺序读取指定 data 区域中的故障位图。</summary>
+    private static uint ReadFaultBitmap(byte[] data, int offset, int byteCount)
+    {
+        uint code = 0U;
+        for (var index = 0; index < byteCount; index++)
+            code |= (uint)data[offset + index] << (index * 8);
+
+        return code;
+    }
+
+    /// <summary>根据位图生成 bit/故障两列表格，置1状态由 XAML 显示为红色。</summary>
+    private static IReadOnlyList<FaultVisualRow> BuildFaultVisualRows(string domain, int faultCount, uint code)
+    {
+        return Enumerable.Range(0, faultCount)
+            .Select(bit => new FaultVisualRow(bit, FaultCatalog.GetName(domain, bit + 1),
+                (code & (1U << bit)) != 0U))
+            .ToList();
+    }
+
+    /// <summary>未选中有效故障报码时清空右侧实时和锁存 bit 位表。</summary>
     private void ClearFaultVisualTable()
     {
         FaultVisualDataGrid.ItemsSource = null;
+        LatchedFaultVisualDataGrid.ItemsSource = null;
         FaultVisualDomainTextBlock.Text = "请选择 data0 = 0x10 ~ 0x14 的故障报码报文。";
+        RealtimeFaultVisualTextBlock.Text = "实时故障位图";
+        LatchedFaultVisualTextBlock.Text = "锁存故障位图";
     }
 
     /// <summary>

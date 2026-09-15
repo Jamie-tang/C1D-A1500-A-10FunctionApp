@@ -3,23 +3,23 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="充电电源 CAN 调试工具"
         Height="820" Width="1280" MinHeight="440" MinWidth="680"
-        Background="#FFF4F7FB" FontFamily="Microsoft YaHei UI" FontSize="12"
+        Background="#FFE7EAED" FontFamily="Microsoft YaHei UI" FontSize="12"
         WindowStartupLocation="Manual" Loaded="Window_Loaded" Closing="Window_Closing">
     <Window.Resources>
-        <SolidColorBrush x:Key="PrimaryBrush" Color="#FF2563EB" />
-        <SolidColorBrush x:Key="SuccessBrush" Color="#FF059669" />
-        <SolidColorBrush x:Key="DangerBrush" Color="#FFDC2626" />
-        <SolidColorBrush x:Key="TextBrush" Color="#FF172033" />
-        <SolidColorBrush x:Key="SecondaryTextBrush" Color="#FF64748B" />
-        <SolidColorBrush x:Key="BorderBrush" Color="#FFDCE3ED" />
+        <SolidColorBrush x:Key="PrimaryBrush" Color="#FF005A9C" />
+        <SolidColorBrush x:Key="SuccessBrush" Color="#FF2E7D32" />
+        <SolidColorBrush x:Key="DangerBrush" Color="#FFC62828" />
+        <SolidColorBrush x:Key="TextBrush" Color="#FF202A33" />
+        <SolidColorBrush x:Key="SecondaryTextBrush" Color="#FF53606B" />
+        <SolidColorBrush x:Key="BorderBrush" Color="#FFAFBAC4" />
 
         <Style TargetType="TextBox">
             <Setter Property="Margin" Value="4,2" />
-            <Setter Property="Padding" Value="6,3" />
-            <Setter Property="MinHeight" Value="27" />
+            <Setter Property="Padding" Value="5,2" />
+            <Setter Property="MinHeight" Value="26" />
             <Setter Property="VerticalContentAlignment" Value="Center" />
-            <Setter Property="Background" Value="White" />
-            <Setter Property="BorderBrush" Value="#FFCBD5E1" />
+            <Setter Property="Background" Value="#FFFCFCFC" />
+            <Setter Property="BorderBrush" Value="#FF9AA7B2" />
             <Setter Property="BorderThickness" Value="1" />
         </Style>
 
@@ -37,11 +37,11 @@
 
         <Style TargetType="Button">
             <Setter Property="Margin" Value="3,2" />
-            <Setter Property="Padding" Value="10,5" />
-            <Setter Property="MinHeight" Value="28" />
-            <Setter Property="Background" Value="White" />
+            <Setter Property="Padding" Value="10,4" />
+            <Setter Property="MinHeight" Value="27" />
+            <Setter Property="Background" Value="#FFF5F6F7" />
             <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
-            <Setter Property="BorderBrush" Value="#FFCBD5E1" />
+            <Setter Property="BorderBrush" Value="#FF9AA7B2" />
             <Setter Property="BorderThickness" Value="1" />
             <Setter Property="Cursor" Value="Hand" />
             <Setter Property="Template">
@@ -51,7 +51,7 @@
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="6"
+                                CornerRadius="2"
                                 Padding="{TemplateBinding Padding}">
                             <ContentPresenter HorizontalAlignment="Center"
                                               VerticalAlignment="Center" />
@@ -94,34 +94,35 @@
         </Style>
 
         <Style x:Key="SectionCardStyle" TargetType="Border">
-            <Setter Property="Background" Value="White" />
+            <Setter Property="Background" Value="#FFF7F8F9" />
             <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}" />
             <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="CornerRadius" Value="9" />
-            <Setter Property="Padding" Value="9" />
+            <Setter Property="CornerRadius" Value="2" />
+            <Setter Property="Padding" Value="8" />
             <Setter Property="Margin" Value="0,0,0,6" />
         </Style>
 
         <Style x:Key="SectionTitleStyle" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="14" />
-            <Setter Property="FontWeight" Value="SemiBold" />
-            <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="#FF183B56" />
             <Setter Property="Margin" Value="0,0,0,5" />
         </Style>
 
         <Style x:Key="MetricValueStyle" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="25" />
-            <Setter Property="FontWeight" Value="SemiBold" />
-            <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
+            <Setter Property="FontFamily" Value="Consolas" />
+            <Setter Property="FontSize" Value="26" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="#FF15232E" />
             <Setter Property="VerticalAlignment" Value="Center" />
         </Style>
 
         <Style TargetType="DataGrid">
-            <Setter Property="Background" Value="White" />
+            <Setter Property="Background" Value="#FFFCFCFC" />
             <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}" />
             <Setter Property="BorderThickness" Value="1" />
             <Setter Property="GridLinesVisibility" Value="Horizontal" />
-            <Setter Property="HorizontalGridLinesBrush" Value="#FFE8EDF4" />
+            <Setter Property="HorizontalGridLinesBrush" Value="#FFD7DEE4" />
             <Setter Property="HeadersVisibility" Value="Column" />
             <Setter Property="RowHeight" Value="27" />
             <Setter Property="ColumnHeaderHeight" Value="30" />
@@ -131,11 +132,52 @@
         </Style>
 
         <Style TargetType="DataGridColumnHeader">
-            <Setter Property="Background" Value="#FFF1F5F9" />
-            <Setter Property="Foreground" Value="#FF334155" />
-            <Setter Property="FontWeight" Value="SemiBold" />
-            <Setter Property="BorderBrush" Value="#FFDCE3ED" />
+            <Setter Property="Background" Value="#FFD9E1E7" />
+            <Setter Property="Foreground" Value="#FF243744" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="BorderBrush" Value="#FFAFBAC4" />
             <Setter Property="Padding" Value="8,0" />
+        </Style>
+
+        <!-- 报文表格使用固定列色序；表头和单元格使用同一色系浅深层次，文字仍保持深色可读。 -->
+        <Style x:Key="Column1HeaderStyle" TargetType="DataGridColumnHeader"><Setter Property="Background" Value="#FFCFE3FA" /><Setter Property="Foreground" Value="#FF1B4D82" /><Setter Property="FontWeight" Value="Bold" /><Setter Property="HorizontalContentAlignment" Value="Center" /><Setter Property="VerticalContentAlignment" Value="Center" /></Style>
+        <Style x:Key="Column2HeaderStyle" TargetType="DataGridColumnHeader"><Setter Property="Background" Value="#FFF8D8C6" /><Setter Property="Foreground" Value="#FF8A3B1F" /><Setter Property="FontWeight" Value="Bold" /><Setter Property="HorizontalContentAlignment" Value="Center" /><Setter Property="VerticalContentAlignment" Value="Center" /></Style>
+        <Style x:Key="Column3HeaderStyle" TargetType="DataGridColumnHeader"><Setter Property="Background" Value="#FFC6EBD8" /><Setter Property="Foreground" Value="#FF176746" /><Setter Property="FontWeight" Value="Bold" /><Setter Property="HorizontalContentAlignment" Value="Center" /><Setter Property="VerticalContentAlignment" Value="Center" /></Style>
+        <Style x:Key="Column4HeaderStyle" TargetType="DataGridColumnHeader"><Setter Property="Background" Value="#FFF8E6AC" /><Setter Property="Foreground" Value="#FF775500" /><Setter Property="FontWeight" Value="Bold" /><Setter Property="HorizontalContentAlignment" Value="Center" /><Setter Property="VerticalContentAlignment" Value="Center" /></Style>
+        <Style x:Key="Column5HeaderStyle" TargetType="DataGridColumnHeader"><Setter Property="Background" Value="#FFF4D0E0" /><Setter Property="Foreground" Value="#FF87334F" /><Setter Property="FontWeight" Value="Bold" /><Setter Property="HorizontalContentAlignment" Value="Center" /><Setter Property="VerticalContentAlignment" Value="Center" /></Style>
+        <Style x:Key="Column6HeaderStyle" TargetType="DataGridColumnHeader"><Setter Property="Background" Value="#FFCBE3CB" /><Setter Property="Foreground" Value="#FF176117" /><Setter Property="FontWeight" Value="Bold" /><Setter Property="HorizontalContentAlignment" Value="Center" /><Setter Property="VerticalContentAlignment" Value="Center" /></Style>
+        <Style x:Key="Column7HeaderStyle" TargetType="DataGridColumnHeader"><Setter Property="Background" Value="#FFD9D3F0" /><Setter Property="Foreground" Value="#FF46358C" /><Setter Property="FontWeight" Value="Bold" /><Setter Property="HorizontalContentAlignment" Value="Center" /><Setter Property="VerticalContentAlignment" Value="Center" /></Style>
+        <Style x:Key="Column8HeaderStyle" TargetType="DataGridColumnHeader"><Setter Property="Background" Value="#FFF4CECE" /><Setter Property="Foreground" Value="#FF8B3030" /><Setter Property="FontWeight" Value="Bold" /><Setter Property="HorizontalContentAlignment" Value="Center" /><Setter Property="VerticalContentAlignment" Value="Center" /></Style>
+        <Style x:Key="Column9HeaderStyle" TargetType="DataGridColumnHeader"><Setter Property="Background" Value="#FFD9E1E7" /><Setter Property="Foreground" Value="#FF354657" /><Setter Property="FontWeight" Value="Bold" /><Setter Property="HorizontalContentAlignment" Value="Center" /><Setter Property="VerticalContentAlignment" Value="Center" /></Style>
+
+        <!-- 所有彩色列在选中时统一使用深蓝底白字，避免默认选择文字在浅色单元格上不可读。 -->
+        <Style x:Key="ColoredColumnCellBaseStyle" TargetType="DataGridCell">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=DataGridRow}}" Value="True">
+                    <Setter Property="Background" Value="#FF007ACC" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="FontWeight" Value="SemiBold" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="Column1CellStyle" TargetType="DataGridCell" BasedOn="{StaticResource ColoredColumnCellBaseStyle}"><Setter Property="Background" Value="#FFF2F8FE" /></Style>
+        <Style x:Key="Column2CellStyle" TargetType="DataGridCell" BasedOn="{StaticResource ColoredColumnCellBaseStyle}"><Setter Property="Background" Value="#FFFFF2EB" /></Style>
+        <Style x:Key="Column3CellStyle" TargetType="DataGridCell" BasedOn="{StaticResource ColoredColumnCellBaseStyle}"><Setter Property="Background" Value="#FFF0FAF5" /></Style>
+        <Style x:Key="Column4CellStyle" TargetType="DataGridCell" BasedOn="{StaticResource ColoredColumnCellBaseStyle}"><Setter Property="Background" Value="#FFFFFAE8" /></Style>
+        <Style x:Key="Column5CellStyle" TargetType="DataGridCell" BasedOn="{StaticResource ColoredColumnCellBaseStyle}"><Setter Property="Background" Value="#FFFFF3F8" /></Style>
+        <Style x:Key="Column6CellStyle" TargetType="DataGridCell" BasedOn="{StaticResource ColoredColumnCellBaseStyle}"><Setter Property="Background" Value="#FFF0F8F0" /></Style>
+        <Style x:Key="Column7CellStyle" TargetType="DataGridCell" BasedOn="{StaticResource ColoredColumnCellBaseStyle}"><Setter Property="Background" Value="#FFF4F2FC" /></Style>
+        <Style x:Key="Column8CellStyle" TargetType="DataGridCell" BasedOn="{StaticResource ColoredColumnCellBaseStyle}"><Setter Property="Background" Value="#FFFFF2F2" /></Style>
+        <Style x:Key="Column9CellStyle" TargetType="DataGridCell" BasedOn="{StaticResource ColoredColumnCellBaseStyle}"><Setter Property="Background" Value="#FFF3F6F8" /></Style>
+
+        <!-- 故障位置位时优先覆盖列底色，确保红色状态醒目。 -->
+        <Style x:Key="FaultBitColumn1CellStyle" TargetType="DataGridCell" BasedOn="{StaticResource Column1CellStyle}">
+            <Style.Triggers><DataTrigger Binding="{Binding IsSet}" Value="True"><Setter Property="Background" Value="#FFD54444" /><Setter Property="Foreground" Value="White" /><Setter Property="FontWeight" Value="SemiBold" /></DataTrigger></Style.Triggers>
+        </Style>
+        <Style x:Key="FaultBitColumn2CellStyle" TargetType="DataGridCell" BasedOn="{StaticResource Column2CellStyle}">
+            <Style.Triggers><DataTrigger Binding="{Binding IsSet}" Value="True"><Setter Property="Background" Value="#FFD54444" /><Setter Property="Foreground" Value="White" /><Setter Property="FontWeight" Value="SemiBold" /></DataTrigger></Style.Triggers>
         </Style>
     </Window.Resources>
 
@@ -151,33 +193,33 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <ScrollViewer Grid.Row="0"
-                      VerticalScrollBarVisibility="Auto"
-                      HorizontalScrollBarVisibility="Disabled" Grid.ColumnSpan="2" Margin="0,0,0,7" Grid.RowSpan="2">
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,7">
             <Grid x:Name="MainContentGrid">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <Border Grid.Row="0" Background="#FF172554" CornerRadius="8" Padding="13,8" Margin="0,0,0,6">
+                <Border Grid.Row="0" Background="#FF243744" CornerRadius="2" Padding="12,7" Margin="0,0,0,6">
                     <DockPanel>
                         <StackPanel DockPanel.Dock="Left">
-                            <TextBlock Text="康普顿充电电源 CAN 调试平台" Foreground="White" FontSize="19" FontWeight="SemiBold" />
-                            <TextBlock Text="ZLG CAN / CAN FD · 运行监测 · 调压调流 · 并联控制 · Flash校准"
-                               Foreground="#FFBFDBFE" FontSize="11" Margin="0,2,0,0" />
+                            <TextBlock Text="康普顿充电电源 CAN 调试平台" Foreground="White" FontSize="18" FontWeight="Bold" />
+                            <TextBlock Text="设备通讯 / 运行监测 / 参数调试 / 校准维护"
+                               Foreground="#FFC8D3DA" FontSize="11" Margin="0,2,0,0" />
                         </StackPanel>
-                        <Border DockPanel.Dock="Right" Background="#332563EB" CornerRadius="15" Padding="10,5"
-                        HorizontalAlignment="Right" VerticalAlignment="Center">
-                            <TextBlock Text="x64 · .NET 8" Foreground="White" FontWeight="SemiBold" />
+                        <Border DockPanel.Dock="Right" Background="#FF3B5363" CornerRadius="2" Padding="8,4"
+                                HorizontalAlignment="Right" VerticalAlignment="Center">
+                            <TextBlock Text="工程调试工具" Foreground="White" FontWeight="Bold" />
                         </Border>
                     </DockPanel>
                 </Border>
 
-                <Border Grid.Row="1" Style="{StaticResource SectionCardStyle}">
+                <TabControl x:Name="TopFunctionTabControl" Grid.Row="1"
+                            Background="White" BorderBrush="{StaticResource BorderBrush}">
+                    <TabItem Header="CAN初始化与调试">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                            <StackPanel Margin="0,7,0,0">
+                                <Border Style="{StaticResource SectionCardStyle}">
                     <StackPanel>
                         <TextBlock Text="设备与通道" Style="{StaticResource SectionTitleStyle}" />
                         <WrapPanel>
@@ -259,42 +301,42 @@
                             <TextBlock Text="每秒轮询，电气量与温度交替刷新" Foreground="#FF94A3B8" FontSize="11" Margin="0,3,0,0" />
                         </StackPanel>
 
-                        <Border Width="205" Margin="3" Background="#FFEFF6FF" BorderBrush="#FFBFDBFE" BorderThickness="1" CornerRadius="7" Padding="11,6">
+                        <Border Width="205" Margin="3" Background="#FFFCFCFC" BorderBrush="#FF2D6F9F" BorderThickness="1" CornerRadius="2" Padding="10,5">
                             <StackPanel>
-                                <TextBlock Text="输入电压" Foreground="#FF1D4ED8" FontWeight="SemiBold" />
+                                <TextBlock Text="输入电压" Foreground="#FF1E5E8C" FontWeight="Bold" />
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock x:Name="InputVoltageValueTextBlock" Text="--.--" Style="{StaticResource MetricValueStyle}" />
-                                    <TextBlock Text=" V" FontSize="16" Foreground="#FF1D4ED8" VerticalAlignment="Bottom" Margin="3,0,0,5" />
+                                    <TextBlock Text=" V" FontSize="16" Foreground="#FF1E5E8C" VerticalAlignment="Bottom" Margin="3,0,0,5" />
                                 </StackPanel>
                             </StackPanel>
                         </Border>
 
-                        <Border Width="205" Margin="3" Background="#FFECFDF5" BorderBrush="#FFA7F3D0" BorderThickness="1" CornerRadius="7" Padding="11,6">
+                        <Border Width="205" Margin="3" Background="#FFFCFCFC" BorderBrush="#FF3C7D4D" BorderThickness="1" CornerRadius="2" Padding="10,5">
                             <StackPanel>
-                                <TextBlock Text="输出电压" Foreground="#FF047857" FontWeight="SemiBold" />
+                                <TextBlock Text="输出电压" Foreground="#FF2E6E42" FontWeight="SemiBold" />
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock x:Name="OutputVoltageValueTextBlock" Text="--.--" Style="{StaticResource MetricValueStyle}" />
-                                    <TextBlock Text=" V" FontSize="16" Foreground="#FF047857" VerticalAlignment="Bottom" Margin="3,0,0,5" />
+                                    <TextBlock Text=" V" FontSize="16" Foreground="#FF2E6E42" VerticalAlignment="Bottom" Margin="3,0,0,5" />
                                 </StackPanel>
                             </StackPanel>
                         </Border>
 
-                        <Border Width="205" Margin="3" Background="#FFFFF7ED" BorderBrush="#FFFED7AA" BorderThickness="1" CornerRadius="7" Padding="11,6">
+                        <Border Width="205" Margin="3" Background="#FFFCFCFC" BorderBrush="#FFA66A22" BorderThickness="1" CornerRadius="2" Padding="10,5">
                             <StackPanel>
-                                <TextBlock Text="输出电流" Foreground="#FFC2410C" FontWeight="SemiBold" />
+                                <TextBlock Text="输出电流" Foreground="#FF9A5A14" FontWeight="SemiBold" />
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock x:Name="OutputCurrentValueTextBlock" Text="--.--" Style="{StaticResource MetricValueStyle}" />
-                                    <TextBlock Text=" A" FontSize="16" Foreground="#FFC2410C" VerticalAlignment="Bottom" Margin="3,0,0,5" />
+                                    <TextBlock Text=" A" FontSize="16" Foreground="#FF9A5A14" VerticalAlignment="Bottom" Margin="3,0,0,5" />
                                 </StackPanel>
                             </StackPanel>
                         </Border>
 
-                        <Border Width="170" Margin="3" Background="#FFFFF1F2" BorderBrush="#FFFDA4AF" BorderThickness="1" CornerRadius="7" Padding="11,6">
+                        <Border Width="170" Margin="3" Background="#FFFCFCFC" BorderBrush="#FFB14545" BorderThickness="1" CornerRadius="2" Padding="10,5">
                             <StackPanel>
-                                <TextBlock Text="热点温度" Foreground="#FFBE123C" FontWeight="SemiBold" />
+                                <TextBlock Text="热点温度" Foreground="#FF9E3434" FontWeight="SemiBold" />
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock x:Name="HeatsinkTemperatureValueTextBlock" Text="--" Style="{StaticResource MetricValueStyle}" />
-                                    <TextBlock Text=" ℃" FontSize="16" Foreground="#FFBE123C" VerticalAlignment="Bottom" Margin="3,0,0,5" />
+                                    <TextBlock Text=" ℃" FontSize="16" Foreground="#FF9E3434" VerticalAlignment="Bottom" Margin="3,0,0,5" />
                                 </StackPanel>
                             </StackPanel>
                         </Border>
@@ -322,7 +364,7 @@
                             <CheckBox x:Name="RemoteFrameCheckBox" Content="远程帧" />
                             <CheckBox x:Name="SendCanFdCheckBox" Content="CAN FD" Checked="SendCanFdCheckBox_Changed" Unchecked="SendCanFdCheckBox_Changed" />
                             <CheckBox x:Name="BrsCheckBox" Content="BRS" IsEnabled="False" />
-                            <TextBox x:Name="SendDataTextBox" MinWidth="285" Width="420" Text="06 FF FF 7F FF 7F FF 81"
+                            <TextBox x:Name="SendDataTextBox" MinWidth="285" Width="420" Text="05 FF FF 7F FF 7F FF 81"
                              ToolTip="十六进制字节，以空格或逗号分隔" />
                             <Button Content="发送报文" Click="SendButton_Click" Style="{StaticResource PrimaryButtonStyle}" />
                         </WrapPanel>
@@ -366,13 +408,16 @@
                             <TextBlock Text="悬空路地址" VerticalAlignment="Center" />
                             <TextBox x:Name="FloatingPsuAddressTextBox" Width="82" Text="0xBF"
                              ToolTip="正式版本使用异或0x01的配对地址，实验室支持0x80与0xBF配对" />
+                            <TextBlock Text="并联总电流(A)" VerticalAlignment="Center" />
+                            <TextBox x:Name="ParallelTotalCurrentTextBox" Width="66" Text="30"
+                             ToolTip="主控仅向合并路发送0x0832总电流；固件均分为两路相同的电流值，范围10～30A" />
                             <Button x:Name="EnterParallelButton" Content="进入并联模式" Click="EnterParallelButton_Click" Style="{StaticResource PrimaryButtonStyle}" />
                             <Button x:Name="ExitParallelButton" Content="退出并联模式" Click="ExitParallelButton_Click" Style="{StaticResource DangerButtonStyle}" />
                             <TextBlock Text="退出时悬空路转自动运行，合并路保持原运行状态" VerticalAlignment="Center"
                                Foreground="{StaticResource SecondaryTextBrush}" Margin="8,0,0,0" />
                         </WrapPanel>
                         <Border Grid.Row="4" Background="#FFF8FAFC" BorderBrush="#FFDCE3ED" BorderThickness="1"
-                        CornerRadius="7" Padding="10,7" Margin="0,7,0,0">
+                        CornerRadius="2" Padding="10,7" Margin="0,7,0,0">
                             <StackPanel>
                                 <WrapPanel>
                                     <TextBlock Text="校准标志位：" FontWeight="SemiBold" Foreground="{StaticResource TextBrush}" />
@@ -384,9 +429,165 @@
                             </StackPanel>
                         </Border>
                     </Grid>
-                </Border>
+                                </Border>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </TabItem>
+            <TabItem Header="故障码解析" Height="19" VerticalAlignment="Top">
+                <Grid Margin="8">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <DockPanel Grid.Row="0" Margin="0,0,0,7">
+                        <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
+                            <Button x:Name="OpenFaultAscButton" Content="打开 ASC 文件" Click="OpenFaultAscButton_Click" Style="{StaticResource PrimaryButtonStyle}" />
+                            <TextBox x:Name="FaultAscFilePathTextBox" Width="290" IsReadOnly="True" ToolTip="导入 Vector ASC 文件，首行必须是 date 时间基准" />
+                            <TextBlock Text="ASC 帧ID筛选" VerticalAlignment="Center" Margin="10,0,0,0" />
+                            <TextBox x:Name="FaultAscFrameIdFilterTextBox" Width="130"
+                                     ToolTip="输入 CAN ID 的任意十六进制片段，例如：1F1C、1080"
+                                     TextChanged="FaultAscFrameIdFilterTextBox_TextChanged" />
+                        </StackPanel>
+                        <TextBlock DockPanel.Dock="Right" Text="在下方 CAN 报文表筛选并选中故障帧即可实时解析" VerticalAlignment="Center"
+                                   Foreground="{StaticResource SecondaryTextBrush}" />
+                    </DockPanel>
+                    <Border x:Name="FaultAscReadProgressPanel" Grid.Row="1" Visibility="Collapsed" Background="#FFFFF8E8"
+                            BorderBrush="#FFE9C46A" BorderThickness="1" CornerRadius="2" Padding="8" Margin="0,0,0,7">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="FaultAscReadProgressTextBlock" Text="正在读取 ASC 文件：0%" FontWeight="SemiBold"
+                                       Foreground="#FF795B00" VerticalAlignment="Center" Margin="0,0,12,0" />
+                            <ProgressBar x:Name="FaultAscReadProgressBar" Grid.Column="1" Minimum="0" Maximum="100" Height="14"
+                                         Foreground="#FFD69A00" Background="#FFF4E4AF" BorderThickness="0" />
+                        </Grid>
+                    </Border>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="8" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="0" />
+                                <RowDefinition Height="0" />
+                            </Grid.RowDefinitions>
+                            <GroupBox Header="ASC 导入 CAN 报文 · 可编辑 CAN ID 与 data0～data7" Grid.Row="0">
+                                <DataGrid x:Name="FaultAscFramesDataGrid" IsReadOnly="False"
+                                          AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                                          EnableRowVirtualization="True" EnableColumnVirtualization="True"
+                                          VirtualizingPanel.IsVirtualizing="True"
+                                          VirtualizingPanel.VirtualizationMode="Recycling"
+                                          ScrollViewer.CanContentScroll="True"
+                                          SelectionMode="Single" SelectionChanged="FaultFrame_SelectionChanged"
+                                          CellEditEnding="FaultAscFramesDataGrid_CellEditEnding"
+                                          ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="行号" Binding="{Binding SourceLine}" Width="60" IsReadOnly="True" HeaderStyle="{StaticResource Column1HeaderStyle}" CellStyle="{StaticResource Column1CellStyle}" />
+                                        <DataGridTextColumn Header="实际时间" Binding="{Binding TimestampText}" Width="175" HeaderStyle="{StaticResource Column2HeaderStyle}" CellStyle="{StaticResource Column2CellStyle}" />
+                                        <DataGridTextColumn Header="通道" Binding="{Binding Channel}" Width="55" HeaderStyle="{StaticResource Column3HeaderStyle}" CellStyle="{StaticResource Column3CellStyle}" />
+                                        <DataGridTextColumn Header="CAN ID" Binding="{Binding CanIdText}" Width="110" HeaderStyle="{StaticResource Column4HeaderStyle}" CellStyle="{StaticResource Column4CellStyle}" />
+                                        <DataGridTextColumn Header="方向" Binding="{Binding Direction}" Width="55" HeaderStyle="{StaticResource Column5HeaderStyle}" CellStyle="{StaticResource Column5CellStyle}" />
+                                        <DataGridTextColumn Header="DLC" Binding="{Binding DataLength}" Width="50" IsReadOnly="True" HeaderStyle="{StaticResource Column6HeaderStyle}" CellStyle="{StaticResource Column6CellStyle}" />
+                                        <DataGridTextColumn Header="data0" Binding="{Binding Data0Text}" Width="65" HeaderStyle="{StaticResource Column7HeaderStyle}" CellStyle="{StaticResource Column7CellStyle}" />
+                                        <DataGridTextColumn Header="报文数据（data0～data7）" Binding="{Binding DataText}" Width="*" HeaderStyle="{StaticResource Column8HeaderStyle}" CellStyle="{StaticResource Column8CellStyle}" />
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </GroupBox>
+                        </Grid>
+                        <Grid Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0" />
+                                <RowDefinition Height="0" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <GroupBox Header="选中报文的故障列表" Grid.Row="0" Visibility="Collapsed">
+                                <DataGrid ItemsSource="{Binding FaultOccurrences}" IsReadOnly="True" AutoGenerateColumns="False"
+                                          CanUserAddRows="False" CanUserDeleteRows="False"
+                                          ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="页面" Binding="{Binding Selector, StringFormat=0x{0:X2}}" Width="70" />
+                                        <DataGridTextColumn Header="首故障码" Binding="{Binding FirstFaultCodeText}" Width="100" />
+                                        <DataGridTextColumn Header="故障域" Binding="{Binding Domain}" Width="115" />
+                                        <DataGridTextColumn Header="PDF编号" Binding="{Binding PdfNumber}" Width="75" />
+                                        <DataGridTextColumn Header="故障名称" Binding="{Binding FaultName}" Width="*" />
+                                        <DataGridTextColumn Header="状态" Binding="{Binding State}" Width="80" />
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </GroupBox>
+                            <GroupBox Header="实时故障位图 · 置位 bit 以红色显示" Grid.Row="2">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="0" />
+                                        <RowDefinition Height="0" />
+                                    </Grid.RowDefinitions>
+                                    <TextBlock x:Name="FaultVisualDomainTextBlock" Text="请选择 data0 = 0x10～0x14 的故障报码报文。"
+                                               Foreground="{StaticResource SecondaryTextBrush}" TextWrapping="Wrap" Margin="2,0,2,5" />
+                                    <DataGrid Grid.Row="2" ItemsSource="{Binding RealtimeFaultVisualRows}" IsReadOnly="True" AutoGenerateColumns="False"
+                                              CanUserAddRows="False" CanUserDeleteRows="False" RowHeight="20"
+                                              ScrollViewer.VerticalScrollBarVisibility="Auto">
+                                        <DataGrid.RowStyle>
+                                            <Style TargetType="DataGridRow">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsSet}" Value="True">
+                                                        <Setter Property="Background" Value="#FFD54444" />
+                                                        <Setter Property="Foreground" Value="White" />
+                                                        <Setter Property="FontWeight" Value="SemiBold" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </DataGrid.RowStyle>
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="实时 bit" Binding="{Binding Bit, StringFormat=bit{0}}" Width="75" HeaderStyle="{StaticResource Column1HeaderStyle}" CellStyle="{StaticResource FaultBitColumn1CellStyle}" />
+                                            <DataGridTextColumn Header="故障名称" Binding="{Binding FaultName}" Width="*" HeaderStyle="{StaticResource Column2HeaderStyle}" CellStyle="{StaticResource FaultBitColumn2CellStyle}" />
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                    <TextBlock x:Name="RealtimeFaultVisualTextBlock" Grid.Row="1" Text="实时故障位图"
+                                               Foreground="{StaticResource SecondaryTextBrush}" FontWeight="SemiBold" Margin="2,2,2,4" />
+                                    <TextBlock x:Name="LatchedFaultVisualTextBlock" Grid.Row="3" Text="锁存故障位图"
+                                               Visibility="Collapsed" Foreground="{StaticResource SecondaryTextBrush}" FontWeight="SemiBold" Margin="2,6,2,4" />
+                                    <DataGrid Grid.Row="4" ItemsSource="{Binding LatchedFaultVisualRows}" IsReadOnly="True" AutoGenerateColumns="False"
+                                              Visibility="Collapsed"
+                                              CanUserAddRows="False" CanUserDeleteRows="False" RowHeight="20"
+                                              ScrollViewer.VerticalScrollBarVisibility="Auto">
+                                        <DataGrid.RowStyle>
+                                            <Style TargetType="DataGridRow">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsSet}" Value="True">
+                                                        <Setter Property="Background" Value="#FFD54444" />
+                                                        <Setter Property="Foreground" Value="White" />
+                                                        <Setter Property="FontWeight" Value="SemiBold" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </DataGrid.RowStyle>
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="锁存 bit" Binding="{Binding Bit, StringFormat=bit{0}}" Width="75" />
+                                            <DataGridTextColumn Header="故障名称" Binding="{Binding FaultName}" Width="*" />
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </Grid>
+                            </GroupBox>
+                            <Border Grid.Row="3" Background="#FFF8FAFC" BorderBrush="#FFDCE3ED" BorderThickness="1" CornerRadius="2" Padding="7" Margin="0,7,0,0">
+                                <TextBlock x:Name="FaultParserStatusTextBlock" Text="请选择 ASC 文件，或从 CAN 实时接收故障报码。"
+                                           Foreground="{StaticResource SecondaryTextBrush}" TextWrapping="Wrap" />
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </TabItem>
+                </TabControl>
             </Grid>
-        </ScrollViewer>
+        </Grid>
 
         <GridSplitter Grid.Row="1" Height="7" HorizontalAlignment="Stretch" VerticalAlignment="Center"
                       Background="#FFCBD5E1" ResizeDirection="Rows" ResizeBehavior="PreviousAndNext"
@@ -401,12 +602,17 @@
                     </Grid.RowDefinitions>
                     <DockPanel Grid.Row="0" Margin="0,0,0,7">
                         <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                            <Button x:Name="PauseFrameReceptionButton" Content="暂停读取"
+                                    Click="PauseFrameReceptionButton_Click"
+                                    ToolTip="暂停向报文列表添加接收帧，CAN通道保持连接" />
+                            <Button Content="保存 ASC" Click="SaveFramesAscButton_Click"
+                                    ToolTip="将当前报文列表中的经典CAN数据帧保存为ASC文件" />
                             <Button Content="清空硬件缓冲" Click="ClearHardwareBufferButton_Click" />
                             <Button Content="清空列表" Click="ClearListButton_Click" />
                         </StackPanel>
                         <WrapPanel>
                             <TextBlock Text="帧ID筛选" VerticalAlignment="Center" />
-                            <TextBox x:Name="FrameIdFilterTextBox" Width="115" ToolTip="例如：0x082B8010" />
+                            <TextBox x:Name="FrameIdFilterTextBox" Width="115" ToolTip="按十六进制片段筛选，例如：1F1C匹配0x1F1C10xx；输入完整ID可精确匹配" />
                             <Button Content="筛选" Click="ApplyFrameIdFilterButton_Click" Style="{StaticResource PrimaryButtonStyle}" />
                             <Button Content="清除筛选" Click="ClearFrameIdFilterButton_Click" />
                             <TextBlock x:Name="CounterTextBlock" Text="接收: 0  发送: 0" Margin="10,0,0,0"
@@ -415,18 +621,19 @@
                     </DockPanel>
                     <DataGrid x:Name="FrameDataGrid" Grid.Row="1" MinHeight="80"
                               ItemsSource="{Binding Frames}" EnableRowVirtualization="True"
+                              SelectionMode="Single" SelectionChanged="FrameDataGrid_SelectionChanged"
                               ScrollViewer.VerticalScrollBarVisibility="Auto"
                               ScrollViewer.HorizontalScrollBarVisibility="Auto">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="时间" Binding="{Binding ReceivedAt, StringFormat={}{0:HH:mm:ss.fff}}" Width="105" />
-                            <DataGridTextColumn Header="硬件时间戳(µs)" Binding="{Binding HardwareTimestampUs}" Width="130" />
-                            <DataGridTextColumn Header="方向" Binding="{Binding Direction}" Width="55" />
-                            <DataGridTextColumn Header="协议" Binding="{Binding FrameType}" Width="90" />
-                            <DataGridTextColumn Header="帧ID" Binding="{Binding IdText}" Width="115" />
-                            <DataGridTextColumn Header="格式" Binding="{Binding Format}" Width="75" />
-                            <DataGridTextColumn Header="类型" Binding="{Binding FrameKind}" Width="75" />
-                            <DataGridTextColumn Header="长度" Binding="{Binding Length}" Width="55" />
-                            <DataGridTextColumn Header="数据" Binding="{Binding DataText}" Width="*" />
+                            <DataGridTextColumn Header="时间" Binding="{Binding ReceivedAt, StringFormat={}{0:HH:mm:ss.fff}}" Width="105" HeaderStyle="{StaticResource Column1HeaderStyle}" CellStyle="{StaticResource Column1CellStyle}" />
+                            <DataGridTextColumn Header="硬件时间戳(µs)" Binding="{Binding HardwareTimestampUs}" Width="130" HeaderStyle="{StaticResource Column2HeaderStyle}" CellStyle="{StaticResource Column2CellStyle}" />
+                            <DataGridTextColumn Header="方向" Binding="{Binding Direction}" Width="55" HeaderStyle="{StaticResource Column3HeaderStyle}" CellStyle="{StaticResource Column3CellStyle}" />
+                            <DataGridTextColumn Header="协议" Binding="{Binding FrameType}" Width="90" HeaderStyle="{StaticResource Column4HeaderStyle}" CellStyle="{StaticResource Column4CellStyle}" />
+                            <DataGridTextColumn Header="帧ID" Binding="{Binding IdText}" Width="115" HeaderStyle="{StaticResource Column5HeaderStyle}" CellStyle="{StaticResource Column5CellStyle}" />
+                            <DataGridTextColumn Header="格式" Binding="{Binding Format}" Width="75" HeaderStyle="{StaticResource Column6HeaderStyle}" CellStyle="{StaticResource Column6CellStyle}" />
+                            <DataGridTextColumn Header="类型" Binding="{Binding FrameKind}" Width="75" HeaderStyle="{StaticResource Column7HeaderStyle}" CellStyle="{StaticResource Column7CellStyle}" />
+                            <DataGridTextColumn Header="长度" Binding="{Binding Length}" Width="55" HeaderStyle="{StaticResource Column8HeaderStyle}" CellStyle="{StaticResource Column8CellStyle}" />
+                            <DataGridTextColumn Header="数据" Binding="{Binding DataText}" Width="*" HeaderStyle="{StaticResource Column9HeaderStyle}" CellStyle="{StaticResource Column9CellStyle}" />
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>

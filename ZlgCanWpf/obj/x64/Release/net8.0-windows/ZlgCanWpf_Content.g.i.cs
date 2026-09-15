@@ -8,124 +8,221 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("controlcan.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("candevcore.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("candevice.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("candtu_net.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("candtu_x64.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canete.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canet_tcp.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdcom.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfddtu.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdnet.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canwifi_tcp.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canwifi_udp.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("can.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("candtu-100ur.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("candtu-200ur.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("candtu-net-400.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("candtu-net.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("candtu.ini")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canet-tcp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canet-udp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdblue-200u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdcom-100ie.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfddtu-200.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdnet-tcp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdnet-udp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdnet100-tcp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdnet100-udp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdnet30cascade-tcp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdnet30cascade-udp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdnet400u-tcp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdnet400u-udp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdnet600u-tcp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdnet600u-udp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdnet800u-tcp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdnet800u-udp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdwifi-tcp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdwifi-udp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canscope.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("can.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("candtu-100ur.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("candtu-200ur.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("candtu-net-400.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("candtu-net.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("candtu.ini")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canet-tcp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canet-udp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdblue-200u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdcom-100ie.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfddtu-200.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdnet-tcp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdnet-udp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdnet100-tcp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdnet100-udp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdnet30cascade-tcp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdnet30cascade-udp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdnet400u-tcp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdnet400u-udp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdnet600u-tcp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdnet600u-udp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdnet800u-tcp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdnet800u-udp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdwifi-tcp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canfdwifi-udp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("canscope.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("device_locale_strings.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pci-5010-u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pci-5020-u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pcie-canfd-100u-ex.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pcie-canfd-100u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pcie-canfd-200u-ex.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pcie-canfd-200u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pcie-canfd-400u-ex.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pcie-canfd-400u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcan-2e-u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcan-4e-u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcan-8e-u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcan-e-u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcan1.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcan2.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcan4.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcanfd-100u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcanfd-200u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcanfd-400u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcanfd-800u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("virtual.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zpscanfd-tcp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zpscanfd-usb.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("device_locale_strings.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pci-5010-u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pci-5020-u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pcie-canfd-100u-ex.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pcie-canfd-100u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pcie-canfd-200u-ex.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pcie-canfd-200u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pcie-canfd-400u-ex.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pcie-canfd-400u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcan-2e-u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcan-4e-u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcan-8e-u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcan-e-u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcan1.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcan2.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcan4.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcanfd-100u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcanfd-200u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcanfd-400u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcanfd-800u.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("virtual.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zpscanfd-tcp.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zpscanfd-usb.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("dll_cfg.ini")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcan.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcan.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcanfd.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usbcanfd800u.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("vci_usbcan2.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("virtualusbcan.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcloud.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/zlgcan.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("c%23_example(vs2019)/windowsapplication1/bin/x64/release/controlcan.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/candevcore.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/candevice.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/candtu_net.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/candtu_x64.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/canete.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/canet_tcp.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/canfdcom.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/canfddtu.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/canfdnet.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/canwifi_tcp.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/canwifi_udp.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/can.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/candtu-10" +
+    "0ur.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/candtu-20" +
+    "0ur.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/candtu-ne" +
+    "t-400.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/candtu-ne" +
+    "t.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/candtu.in" +
+    "i")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/canet-tcp" +
+    ".xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/canet-udp" +
+    ".xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/canfdblue" +
+    "-200u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/canfdcom-" +
+    "100ie.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/canfddtu-" +
+    "200.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/canfdnet-" +
+    "tcp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/canfdnet-" +
+    "udp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/canfdnet1" +
+    "00-tcp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/canfdnet1" +
+    "00-udp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/canfdnet3" +
+    "0cascade-tcp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/canfdnet3" +
+    "0cascade-udp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/canfdnet4" +
+    "00u-tcp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/canfdnet4" +
+    "00u-udp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/canfdnet6" +
+    "00u-tcp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/canfdnet6" +
+    "00u-udp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/canfdnet8" +
+    "00u-tcp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/canfdnet8" +
+    "00u-udp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/canfdwifi" +
+    "-tcp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/canfdwifi" +
+    "-udp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/canscope." +
+    "xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "an.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "andtu-100ur.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "andtu-200ur.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "andtu-net-400.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "andtu-net.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "andtu.ini")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "anet-tcp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "anet-udp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "anfdblue-200u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "anfdcom-100ie.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "anfddtu-200.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "anfdnet-tcp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "anfdnet-udp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "anfdnet100-tcp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "anfdnet100-udp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "anfdnet30cascade-tcp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "anfdnet30cascade-udp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "anfdnet400u-tcp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "anfdnet400u-udp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "anfdnet600u-tcp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "anfdnet600u-udp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "anfdnet800u-tcp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "anfdnet800u-udp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "anfdwifi-tcp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "anfdwifi-udp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/c" +
+    "anscope.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/d" +
+    "evice_locale_strings.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/p" +
+    "ci-5010-u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/p" +
+    "ci-5020-u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/p" +
+    "cie-canfd-100u-ex.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/p" +
+    "cie-canfd-100u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/p" +
+    "cie-canfd-200u-ex.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/p" +
+    "cie-canfd-200u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/p" +
+    "cie-canfd-400u-ex.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/p" +
+    "cie-canfd-400u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/u" +
+    "sbcan-2e-u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/u" +
+    "sbcan-4e-u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/u" +
+    "sbcan-8e-u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/u" +
+    "sbcan-e-u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/u" +
+    "sbcan1.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/u" +
+    "sbcan2.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/u" +
+    "sbcan4.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/u" +
+    "sbcanfd-100u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/u" +
+    "sbcanfd-200u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/u" +
+    "sbcanfd-400u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/u" +
+    "sbcanfd-800u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/v" +
+    "irtual.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/z" +
+    "pscanfd-tcp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/default/z" +
+    "pscanfd-usb.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/device_lo" +
+    "cale_strings.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/pci-5010-" +
+    "u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/pci-5020-" +
+    "u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/pcie-canf" +
+    "d-100u-ex.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/pcie-canf" +
+    "d-100u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/pcie-canf" +
+    "d-200u-ex.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/pcie-canf" +
+    "d-200u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/pcie-canf" +
+    "d-400u-ex.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/pcie-canf" +
+    "d-400u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/usbcan-2e" +
+    "-u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/usbcan-4e" +
+    "-u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/usbcan-8e" +
+    "-u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/usbcan-e-" +
+    "u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/usbcan1.x" +
+    "ml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/usbcan2.x" +
+    "ml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/usbcan4.x" +
+    "ml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/usbcanfd-" +
+    "100u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/usbcanfd-" +
+    "200u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/usbcanfd-" +
+    "400u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/usbcanfd-" +
+    "800u.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/virtual.x" +
+    "ml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/zpscanfd-" +
+    "tcp.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/devices_property/zpscanfd-" +
+    "usb.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/dll_cfg.ini")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/usbcan.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/usbcan.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/usbcanfd.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/usbcanfd800u.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/vci_usbcan2.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/virtualusbcan.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("zlgcan_c%23_20241120/zlgcan/bin/x64/release/kerneldlls/zlgcloud.dll")]
 
 

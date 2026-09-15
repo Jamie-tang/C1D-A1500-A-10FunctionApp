@@ -309,17 +309,22 @@
                 </GroupBox>
             </Grid>
 
-            <GroupBox Grid.Column="2" Header="故障位表  ·  置 1 的 bit 行显示为红色">
+            <GroupBox Grid.Column="2" Header="实时/锁存故障位表  ·  置 1 的 bit 行显示为红色">
                 <Grid>
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="FaultVisualDomainTextBlock" Text="请选择 data0 = 0x10 ~ 0x14 的故障报码报文。"
                                Foreground="#5B6B7B" TextWrapping="Wrap" Margin="3,0,3,8" />
-                    <DataGrid x:Name="FaultVisualDataGrid" Grid.Row="1" IsReadOnly="True" AutoGenerateColumns="False"
+                    <TextBlock x:Name="RealtimeFaultVisualTextBlock" Grid.Row="1" Text="实时故障位图"
+                               Foreground="#245A87" FontWeight="SemiBold" Margin="3,0,3,5" />
+                    <DataGrid x:Name="FaultVisualDataGrid" Grid.Row="2" IsReadOnly="True" AutoGenerateColumns="False"
                               CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False"
-                              RowHeight="16" FontSize="11" HeadersVisibility="Column" VerticalScrollBarVisibility="Disabled">
+                              RowHeight="16" FontSize="11" HeadersVisibility="Column" VerticalScrollBarVisibility="Auto">
                         <DataGrid.RowStyle>
                             <Style TargetType="DataGridRow">
                                 <Setter Property="Foreground" Value="#38516A" />
@@ -336,7 +341,32 @@
                         </DataGrid.RowStyle>
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="bit" Binding="{Binding Bit, StringFormat=bit{0}}" Width="65" />
-                            <DataGridTextColumn Header="故障" Binding="{Binding FaultName}" Width="*" />
+                            <DataGridTextColumn Header="实时故障" Binding="{Binding FaultName}" Width="*" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <TextBlock x:Name="LatchedFaultVisualTextBlock" Grid.Row="3" Text="锁存故障位图"
+                               Foreground="#7A4E22" FontWeight="SemiBold" Margin="3,8,3,5" />
+                    <DataGrid x:Name="LatchedFaultVisualDataGrid" Grid.Row="4" IsReadOnly="True" AutoGenerateColumns="False"
+                              CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False"
+                              RowHeight="16" FontSize="11" HeadersVisibility="Column" VerticalScrollBarVisibility="Auto">
+                        <DataGrid.RowStyle>
+                            <Style TargetType="DataGridRow">
+                                <Setter Property="Foreground" Value="#38516A" />
+                                <Setter Property="Background" Value="White" />
+                                <Setter Property="BorderThickness" Value="0" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsSet}" Value="True">
+                                        <Setter Property="Foreground" Value="White" />
+                                        <Setter Property="Background" Value="#D54444" />
+                                        <Setter Property="FontWeight" Value="SemiBold" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.RowStyle>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="bit" Binding="{Binding Bit, StringFormat=bit{0}}" Width="65" />
+                            <DataGridTextColumn Header="锁存故障" Binding="{Binding FaultName}" Width="*" />
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>

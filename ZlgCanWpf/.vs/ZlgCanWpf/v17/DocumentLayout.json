@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\work\\FirmWare\\SEC\\C1D-A1200-A\\5.0\\gitnew\\C1D-A1200-A-MCU\\ZlgCanWpf\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D3A0A2D8-A11D-46A0-8D7A-345DDDB4BB28}|ZlgCanWpf.csproj|d:\\work\\firmware\\sec\\c1d-a1200-a\\5.0\\gitnew\\c1d-a1200-a-mcu\\zlgcanwpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3A0A2D8-A11D-46A0-8D7A-345DDDB4BB28}|ZlgCanWpf.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D3A0A2D8-A11D-46A0-8D7A-345DDDB4BB28}|ZlgCanWpf.csproj|d:\\work\\firmware\\sec\\c1d-a1200-a\\5.0\\gitnew\\c1d-a1200-a-mcu\\zlgcanwpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{D3A0A2D8-A11D-46A0-8D7A-345DDDB4BB28}|ZlgCanWpf.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D3A0A2D8-A11D-46A0-8D7A-345DDDB4BB28}|ZlgCanWpf.csproj|d:\\work\\firmware\\sec\\c1d-a1200-a\\5.0\\gitnew\\c1d-a1200-a-mcu\\zlgcanwpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D3A0A2D8-A11D-46A0-8D7A-345DDDB4BB28}|ZlgCanWpf.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D3A0A2D8-A11D-46A0-8D7A-345DDDB4BB28}|ZlgCanWpf.csproj|d:\\work\\firmware\\sec\\c1d-a1200-a\\5.0\\gitnew\\c1d-a1200-a-mcu\\zlgcanwpf\\ascparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3A0A2D8-A11D-46A0-8D7A-345DDDB4BB28}|ZlgCanWpf.csproj|solutionrelative:ascparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -55,26 +59,38 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\work\\FirmWare\\SEC\\C1D-A1200-A\\5.0\\gitnew\\C1D-A1200-A-MCU\\ZlgCanWpf\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "D:\\work\\FirmWare\\SEC\\C1D-A1200-A\\5.0\\gitnew\\C1D-A1200-A-MCU\\ZlgCanWpf\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAAUCAAAAAAAAAAAQwBQCAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-05T03:25:42.91Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\work\\FirmWare\\SEC\\C1D-A1200-A\\5.0\\gitnew\\C1D-A1200-A-MCU\\ZlgCanWpf\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
               "ToolTip": "D:\\work\\FirmWare\\SEC\\C1D-A1200-A\\5.0\\gitnew\\C1D-A1200-A-MCU\\ZlgCanWpf\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-09-05T01:17:48.646Z",
+              "WhenOpened": "2026-09-10T06:27:30.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AscParser.cs",
+              "DocumentMoniker": "D:\\work\\FirmWare\\SEC\\C1D-A1200-A\\5.0\\gitnew\\C1D-A1200-A-MCU\\ZlgCanWpf\\AscParser.cs",
+              "RelativeDocumentMoniker": "AscParser.cs",
+              "ToolTip": "D:\\work\\FirmWare\\SEC\\C1D-A1200-A\\5.0\\gitnew\\C1D-A1200-A-MCU\\ZlgCanWpf\\AscParser.cs",
+              "RelativeToolTip": "AscParser.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAiwCYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-09T08:41:55.757Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\work\\FirmWare\\SEC\\C1D-A1200-A\\5.0\\gitnew\\C1D-A1200-A-MCU\\ZlgCanWpf\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "D:\\work\\FirmWare\\SEC\\C1D-A1200-A\\5.0\\gitnew\\C1D-A1200-A-MCU\\ZlgCanWpf\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAANkEAAAAAAAAAAAkwNMEAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-05T03:25:42.91Z",
               "EditorCaption": ""
             }
           ]
